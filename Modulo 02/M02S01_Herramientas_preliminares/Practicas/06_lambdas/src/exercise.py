@@ -1,8 +1,8 @@
+import os
+from datetime import datetime
 
 ##############################################################################
 # Definiciones
-import os
-from datetime import datetime
 
 # Expresión que convierte una fecha "dd/mm/aaaa" en objeto datetime
 dt = lambda f: datetime.strptime(f, "%d/%m/%Y")
@@ -53,14 +53,14 @@ matriz = cargar_matriz(ruta_carpeta + "\\matriz.csv")
 guardar_matriz(matriz, ruta_carpeta + "\\matriz_2.csv")
 
 ##########################
-
 # Hay funciones que para generalizar su aplicación, esperan como parámetro
-# una o más funciones.
+# una o más funciones, aquí suele usarse mucho las expresiones lambda.
 
 # Funciones de ordenamiento predefinidas en Python
+
 coordenadas = [(2, 6), (9, 10), (2, 3), (4, 9), (8, 7), (8, 4), (10, 1), (2, 7)]
-# Podemos ordenadar las coordenadas. Por defecto, las tuplas se ordenadn primero respecto
-# al primer elemento, luego respecto al segundo, etc. 
+# Podemos ordenadar las coordenadas. Por defecto, las tuplas se ordenadn 
+# primero respecto al primer elemento, luego respecto al segundo, etc. 
 sorted(coordenadas)
 # Podemos ordenarlas en orden inverso usando el argumento 'reverse'
 # pero esta limitado a solo invertir el orden de la lista
@@ -70,8 +70,8 @@ sorted(coordenadas, reverse=True)
 # Este argumento espera una función, y es aquí donde podemos hacer uso de las
 # expresiones 'lambda', si no requerimos de algo muy sofisticado.
 sorted(coordenadas, key=lambda x: (-x[0], -x[1]))
-# Podemos or ejemplo en su lugar ordenar de mayor a menor por la primera entrada pero 
-# de menor a mayor por la segunda coordenada.
+# Podemos or ejemplo en su lugar ordenar de mayor a menor por la primera 
+# entrada pero de menor a mayor por la segunda coordenada.
 sorted(coordenadas, key=lambda x: (-x[0], x[1]))
 # O podemos ordenar como prioridad por la segunda coordenada
 sorted(coordenadas, key=lambda x: (x[1], x[0]))
