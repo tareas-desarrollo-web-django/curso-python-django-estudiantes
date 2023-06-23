@@ -40,6 +40,7 @@ while not salir:
     print('1.- Sumar dos números')
     print('2.- Salir')
     opc = input('Ingresa el número de la opción: ').strip()
+    
     if opc == '1':
         x = input('Ingresa los números separados por espacio: ').split()
         print(f">>> La suma es {int(x[0]) + int(x[1])}")

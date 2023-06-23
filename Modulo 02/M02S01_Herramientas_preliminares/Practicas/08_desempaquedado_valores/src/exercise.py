@@ -56,4 +56,28 @@ for producto, precio in precios_productos.items():
     print(f"{producto=}, {precio=}")
 
 ##############################################################################
+# Desempaquetado de parámetros con diccionarios
 
+def consultar_bd(conexion, tabla, columnas, filtros=None):
+    print('Consultando la base de datos..')
+    print(f"{conexion=}")
+    print(f"{tabla=}")
+    print(f"{columnas=}")
+    print(f"{filtros=}")
+
+    return [['id', 'nombre'], [2, 'Libreta'], [3, 'Libro']]
+
+
+consulta = {
+    'conexion': 'sqlalchemy',
+    'tabla': 'productos',
+    'columnas': ['id', 'nombre'],
+    'filtros': ["nombre in ('Libreta', 'Libro')"]
+}
+
+# Desempaquetando de parámetros manual
+datos = consultar_bd(consulta['conexion'], consulta['tabla'], consulta['columnas'], consulta['filtros'])
+# Desempaquetando de parámetros automático
+datos = consultar_bd(**consulta)
+
+##############################################################################
