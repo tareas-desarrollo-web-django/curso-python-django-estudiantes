@@ -1,20 +1,3 @@
-'''
-Atributos dinámicos de objetos
-================================
-
-Python tiene una libertad muy grande al implementar código. Un ejemplo de esto es que a los objetos se les puede agregar y borrar atributos dinámicamente, similar a los diccionarios.
-
-Esto aplica también a las clases, ya que, por mas extraño que parezca, las clases también son objetos, es por eso que pueden tener atributos.
-
-
-Sintaxis:
-----------
-
-* Para agregar un atributo a un objeto, solo basta con asignarle un valor, cuando Python nota que no existe, entonces lo crea solo para el objeto en cuestión.
-    * Ejemplo: `MiObjeto.nuevo_atributo = 10`
-* Para eliminar un atributo de un objeto, usamos la palabra `del`.
-    * Ejemplo: `del MiObjeto.nuevo_atributo`.
-'''
 
 ##############################################################################
 # Definiciones
@@ -37,14 +20,14 @@ class Auto:
         print(f"Frenando el auto")
         self.vel_actual = 0
 
-# Función auxiliar para mostrar los atributos de un objeto Auto
-def print_atributos(obj):
-    print(f"{obj.nombre}:" if hasattr(obj, "nombre") else "Desconocido: ")
+    def mostrar(self):
+        r"""Función auxiliar para mostrar los atributos de un objeto Auto"""
+        print(f"{self.nombre}:" if hasattr(self, "nombre") else "Desconocido:")
 
-    for k,v in vars(obj).items():
-        if k == "nombre":
-            continue
-        print(f"\t{k}:{v}")
+        for k,v in vars(self).items():
+            if k == "nombre":
+                continue
+            print(f"\t{k}:{v}")
 
 ##############################################################################
 # Operaciones
@@ -54,30 +37,31 @@ taxi = Auto("Taxi", "Amarillo", 150)
 deportivo = Auto("Deportivo", "Amarillo", 150)
 
 # Mostramos los atributos actuales de los objetos
-# Vemos que el atributo de clase 'llantas' no se muestra porque no pertenece
-# a las instancias
 print("*" * 40)
 print("Atributos originales")
-print_atributos(taxi)
-print_atributos(deportivo)
+taxi.mostrar()
+deportivo.mostrar()
 
 # Agregamos un atributo al objeto taxi y mostramos los atributos de los objetos
 taxi.cilindros = 4
 print("*" * 40)
 print("Despues de agregar atributos a Taxi")
-print_atributos(taxi)
-print_atributos(deportivo)
+taxi.mostrar()
+deportivo.mostrar()
 
 # Borramos atributos de taxi y mostramos los atributos de los objetos
 del taxi.color
 print("*" * 40)
 print("Despues de borrar atributos a Taxi")
-print_atributos(taxi)
-print_atributos(deportivo)
+taxi.mostrar()
+deportivo.mostrar()
 
+# # Asignamos un atributo llamado 'llantas' a la clase Auto
+# Auto.llantas = 4
 # # Al referenciar un atributo sobre una instancia, primero se revisa si
 # # existe en la instancia, si no entonces busca en la clase,
 # # es por eso que podemos consultar el atributo 'llantas' desde las instancias
+
 # print("*" * 40)
 # print("Consultamos atributos de clase desde las instancias")
 # print(f"{taxi.llantas=}")
@@ -93,7 +77,7 @@ print_atributos(deportivo)
 # print(f"{deportivo.llantas=}")
 # print(f"{Auto.llantas=}\n")
 
-# # También podemos agregar atributos a la clase
+# # Podemos agregar dinámicamente los atributos que queramos
 # Auto.puertas = 4
 # print("*" * 40)
 # print("Agregamos un atributo a la clase")

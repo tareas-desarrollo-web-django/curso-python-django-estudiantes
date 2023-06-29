@@ -1,20 +1,3 @@
-'''
-Métodos
-=========
-
-Los ***Métodos*** son funciones ligadas a una clase que determinan el comportamiento y las interacciones que tendrán los objetos instanciados con el resto del código.
-
-Lo idea es cada clase tenga un propósito específico para que sus métodos estén relacionados. Por ejemplo, no sería intuitivo crear una clase que tenga revueltos los atributos de un limón y de un gato. Lo mejor sería tener una clase para un limón y otra clase para un gato.
-
-Sintaxis:
-----------
-
-* Los métodos deben estar definidos dentro de la clase a la que corresponden.
-* La sintaxis es similar que el de una función normal, solo que su primer argumento `self` siempre recibirá el objeto sobre el que se está aplicando el método.
-    * Ejemplo: `def mover(self, pasos):`.
-* El nombre del primer argumento no tiene que ser `self` necesariamente, pero utilizar otro nombre implicaría mucha confusión, ya que el primer argumento siempre será el objeto sobre el que se aplica el método y es enviado automáticamente por Python al invocar el método.
-    * Por favor nunca usen otro nombre distinto a `self` para el primer argumento de un método.
-'''
 
 ##############################################################################
 # Definiciones
@@ -60,5 +43,18 @@ taxi = Auto("Taxi", "Amarillo", 150)
 #     taxi.arrancar(200)
 # except ValueError as e:
 #     print(e)
+
+##############################################################################
+r"""
+Ejercicio para realizar en clase
+- Generar una clase llamada 'Tabla' que menje una tabla desde un csv
+- La clase debe recibir en el constructor una ruta del archivo csv y 
+  automáticamente cargar la tabla, la tabla se espera que tenga una cabecera
+  y el contenido debe ser de valores enteros.
+- Debe tener un método para guardar el contenido de la tabla de vuelta al
+  archivo.
+- Implementar un método para sumarle una constante a toda la tabla.
+"""
+
 
 ##############################################################################

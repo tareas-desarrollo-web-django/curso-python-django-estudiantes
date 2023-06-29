@@ -3,7 +3,7 @@ Métodos
 
 Los ***Métodos*** son funciones ligadas a una clase que determinan el comportamiento y las interacciones que tendrán los objetos instanciados con el resto del código.
 
-Lo idea es cada clase tenga un propósito específico para que sus métodos estén relacionados. Por ejemplo, no sería intuitivo crear una clase que tenga revueltos los atributos de un limón y de un gato. Lo mejor sería tener una clase para un limón y otra clase para un gato.
+La idea es que cada clase tenga un propósito específico para que sus métodos estén relacionados. Por ejemplo, no sería intuitivo crear una clase que tenga revueltos los atributos de un limón y de un gato. Lo mejor sería tener una clase para un limón y otra clase para un gato.
 
 Sintaxis:
 ----------
