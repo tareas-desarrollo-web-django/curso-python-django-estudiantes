@@ -30,3 +30,22 @@ En el archivo `src\exercise.py` implementar una clase llamada `Fibonacci`:
 * En esta ocación la clase debe manejar un pequeño sistema de caché mediante atributos, donde se registren los elementos de Fibonacci que ya han sido calculados.
     * De esta forma, podemos revisar en el caché si ya fue calculado el 
     `i-ésimo` elemento y usarlo en lugar de volver a calcularlo.
+
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+
+```
+
+Ejemplo 2:
+```python
+
+```
+
+Ejemplo 3:
+```python
+
+```

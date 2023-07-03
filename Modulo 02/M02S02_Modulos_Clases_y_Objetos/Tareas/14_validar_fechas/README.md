@@ -22,3 +22,22 @@ En el archivo `src\exercise.py` implementar una clase llamada `Fecha`:
 * Dicha clase debe contener un método con firma `valida(self)`.
     * Dicho método debe devolver `True` si la fecha dada es válida o `False`
     si no lo es. Por ejemplo, `"20/12/2022"` es una fecha válida, pero `"32/14/2022"` no es una fecha válida.
+
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+
+```
+
+Ejemplo 2:
+```python
+
+```
+
+Ejemplo 3:
+```python
+
+```

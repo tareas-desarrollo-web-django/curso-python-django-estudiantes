@@ -35,3 +35,22 @@ En el archivo `src\exercise.py` implementar una clase llamada `Tarjeta`:
         * `ValueError`: si el número de tarjeta no contiene 16 dígitos
 * Dicha clase debe contener un método con firma `valida(self)`.
     * El método debe retornar `True` si el número de tarjeta registrado en el constructor es válido o `False` si no lo es.
+
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+
+```
+
+Ejemplo 2:
+```python
+
+```
+
+Ejemplo 3:
+```python
+
+```

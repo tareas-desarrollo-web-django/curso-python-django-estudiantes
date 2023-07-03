@@ -3,7 +3,7 @@ Fibonacci
 
 La serie Fibonacci es una sucesión de números cuyos primeros dos elementos
 son `0` y `1`. Cualquier elemento siguiente se calcula como la suma de sus
-dos elementos anteriores.
+dos elementos anteriores inmediatos.
 
 Esta sucesión se expresa matemáticamente como sigue, donde `f(n)` representa
 el `n-ésimo` elemento de la sucesión, con `n >= 0`:
@@ -24,3 +24,22 @@ En el archivo `src\exercise.py` implementar una clase llamada `Fibonacci`:
     * Excepciones (indicar un mensaje de error):
         * `ValueError`: si `n` es menor que cero.
 * La implementación se debe hacer con recursividad.
+
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+
+```
+
+Ejemplo 2:
+```python
+
+```
+
+Ejemplo 3:
+```python
+
+```

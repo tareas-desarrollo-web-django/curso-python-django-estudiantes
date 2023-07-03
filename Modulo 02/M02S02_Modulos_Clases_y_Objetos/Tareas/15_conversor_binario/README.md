@@ -48,3 +48,22 @@ En el archivo `src\exercise.py` implementar una clase llamada
         * `ValueError`: si la representación binaria no tiene ningún dígito.
         * `ValueError`: si la representación binaria contiene valores distintos de
         `0` y `1`.
+
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+
+```
+
+Ejemplo 2:
+```python
+
+```
+
+Ejemplo 3:
+```python
+
+```

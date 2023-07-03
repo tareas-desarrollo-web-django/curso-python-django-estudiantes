@@ -23,3 +23,36 @@ En el archivo `src\exercise.py` implementar una clase llamada `PuntoCartesiano`:
     * Dicho método debe transformar los valores de los atributos `x`, `y` de forma que los nuevos valores correspondan a rotar el punto $(x, y)$ en `t` grados alrededor del punto cartesiano `p`.
     * Redondear los valores a 5 dígitos decimales.
 
+
+Validaciones
+------------
+
+Ejemplo 1:
+```python
+>>> p = PuntoCartesiano(-45.3, -65.5) 
+>>> p.x, p.y
+(-45.3, -65.5)
+>>> p.rotar_general(50, (-55.5, 8.0)) 
+>>> p.x, p.y
+(7.3607, -31.43124)
+```
+
+Ejemplo 2:
+```python
+>>> p = PuntoCartesiano(4.4, 79.4)       
+>>> p.x, p.y
+(4.4, 79.4)
+>>> p.rotar_general(-245, (27.4, 25.7)) 
+>>> p.x, p.y
+(-11.54851, -17.83968)
+```
+
+Ejemplo 3:
+```python
+>>> p = PuntoCartesiano(-50.8, -65.9) 
+>>> p.x, p.y
+(-50.8, -65.9)
+>>> p.rotar_general(-226, (54.2, 13.8)) 
+>>> p.x, p.y
+(184.47051, -6.36641)
+```
