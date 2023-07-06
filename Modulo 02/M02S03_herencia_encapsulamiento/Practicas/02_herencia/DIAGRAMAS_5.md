@@ -9,7 +9,7 @@ classDiagram
         caminar()
         dormir()
     }
-    class Canido{
+    class Canino{
         colmillos
         __init__(color)
         dormir()
@@ -33,8 +33,8 @@ classDiagram
     class PerroPollito{
         lanzar_rayo_laser()
     }
-    Animal <|-- Canido
-    Canido <|-- Perro
+    Animal <|-- Canino
+    Canino <|-- Perro
     Animal <|-- Ave
     Ave <|-- Pollito
     Perro <|-- PerroPollito: 1
