@@ -1,13 +1,3 @@
-'''
-Polimorfismo
-=============
-
-En Python, el ***Polimorfismo*** no existe como tal. El tipado dinámico de Python induce naturalmente el polimorfismo.
-* De manera simplificada, el mecanismo de polimorfismo en cualquier lenguaje de programación permite que una variable pueda contener varios tipos de objetos.
-* Normalmente esto se logra mediante herencia de clases.
-* Pero como ya sabemos, esto es natural en Python, pero no por ello deja de ser una característica importante.
-* Este mecanismo se aprovecha cuando tenemos varias clases que realizan actividades similares a través de métodos que tienen el mismo nombre en todas ellas, y de esa forma podemos procesarlas mediante funciones sin importar el tipo del objeto, sino solo que contengan los métodos de los que hará uso.
-'''
 
 ##############################################################################
 # Ejemplo
@@ -52,38 +42,38 @@ En Python, el ***Polimorfismo*** no existe como tal. El tipado dinámico de Pyth
 ##############################################################################
 # Ejemplo
 
-from random import randint
+# from random import randint
 
-class PagoPaypal:
-    def procesar_pago(self, monto):
-        print(f"Pagando con Paypal: {monto}")
+# class PagoPaypal:
+#     def procesar_pago(self, monto):
+#         print(f"Pagando con Paypal: {monto}")
 
-class PagoTarjeta:
-    def procesar_pago(self, monto):
-        print(f"Pagando con Tarjeta: {monto}")
+# class PagoTarjeta:
+#     def procesar_pago(self, monto):
+#         print(f"Pagando con Tarjeta: {monto}")
 
-class PagoTransferencia:
-    def procesar_pago(self, monto):
-        print(f"Pagando con Transferencia: {monto}")
+# class PagoTransferencia:
+#     def procesar_pago(self, monto):
+#         print(f"Pagando con Transferencia: {monto}")
 
-class PagoEfectivo:
-    def procesar_pago(self, monto):
-        print(f"Pagando con Efectivo: {monto}")
+# class PagoEfectivo:
+#     def procesar_pago(self, monto):
+#         print(f"Pagando con Efectivo: {monto}")
 
 
-class Carrito:
-    def calcular_total(self):
-        return randint(1000, 10000) / 100
+# class Carrito:
+#     def calcular_total(self):
+#         return randint(1000, 10000) / 100
 
-    def pagar(self, metodo):
-        monto = self.calcular_total()
-        metodo.procesar_pago(monto)
+#     def pagar(self, metodo):
+#         monto = self.calcular_total()
+#         metodo.procesar_pago(monto)
 
-print("*" * 40)
-carrito = Carrito()
-carrito.pagar(PagoPaypal())
-carrito.pagar(PagoTarjeta())
-carrito.pagar(PagoTransferencia())
-carrito.pagar(PagoEfectivo())
+# print("*" * 40)
+# carrito = Carrito()
+# carrito.pagar(PagoPaypal())
+# carrito.pagar(PagoTarjeta())
+# carrito.pagar(PagoTransferencia())
+# carrito.pagar(PagoEfectivo())
 
 ##############################################################################
