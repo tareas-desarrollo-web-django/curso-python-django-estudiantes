@@ -1,4 +1,3 @@
-
 ##############################################################################
 # Ejemplo
 
@@ -42,38 +41,38 @@
 ##############################################################################
 # Ejemplo
 
-# from random import randint
+from random import randint
 
-# class PagoPaypal:
-#     def procesar_pago(self, monto):
-#         print(f"Pagando con Paypal: {monto}")
+class PagoPaypal:
+    def procesar_pago(self, monto):
+        print(f"Pagando con Paypal: {monto}")
 
-# class PagoTarjeta:
-#     def procesar_pago(self, monto):
-#         print(f"Pagando con Tarjeta: {monto}")
+class PagoTarjeta:
+    def procesar_pago(self, monto):
+        print(f"Pagando con Tarjeta: {monto}")
 
-# class PagoTransferencia:
-#     def procesar_pago(self, monto):
-#         print(f"Pagando con Transferencia: {monto}")
+class PagoTransferencia:
+    def procesar_pago(self, monto):
+        print(f"Pagando con Transferencia: {monto}")
 
-# class PagoEfectivo:
-#     def procesar_pago(self, monto):
-#         print(f"Pagando con Efectivo: {monto}")
+class PagoEfectivo:
+    def procesar_pago(self, monto):
+        print(f"Pagando con Efectivo: {monto}")
 
 
-# class Carrito:
-#     def calcular_total(self):
-#         return randint(1000, 10000) / 100
+class Carrito:
+    def calcular_total(self):
+        return randint(1000, 10000) / 100
 
-#     def pagar(self, metodo):
-#         monto = self.calcular_total()
-#         metodo.procesar_pago(monto)
+    def pagar(self, metodo):
+        monto = self.calcular_total()
+        metodo.procesar_pago(monto)
 
-# print("*" * 40)
-# carrito = Carrito()
-# carrito.pagar(PagoPaypal())
-# carrito.pagar(PagoTarjeta())
-# carrito.pagar(PagoTransferencia())
-# carrito.pagar(PagoEfectivo())
+print("*" * 40)
+carrito = Carrito()
+carrito.pagar(PagoPaypal())
+carrito.pagar(PagoTarjeta())
+carrito.pagar(PagoTransferencia())
+carrito.pagar(PagoEfectivo())
 
 ##############################################################################
