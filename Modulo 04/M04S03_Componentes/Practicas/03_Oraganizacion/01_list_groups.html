@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>List groups</title>
+</head>
+<body>
+
+    <div class="container my-5 py-3 border border-dark">
+        
+        <!-- Lista agrupada normal: .list-group -->
+        <div class="my-3">
+            <ul class="list-group w-50">
+                <li class="list-group-item">Elemento 1</li>
+                <li class="list-group-item">Elemento 2</li>
+                <li class="list-group-item">Elemento 3</li>
+                <li class="list-group-item">Elemento 4</li>
+            </ul>
+        </div>
+
+        <!-- Con elementos activos: .active -->
+        <div class="my-3">
+            <ul class="list-group w-50">
+                <li class="list-group-item">Elemento 1</li>
+                <li class="list-group-item active">Elemento 2</li>
+                <li class="list-group-item">Elemento 3</li>
+                <li class="list-group-item">Elemento 4</li>
+            </ul>
+        </div>
+
+        <!-- Usar links: <div>, <a> -->
+        <div class="my-3">
+            <div class="list-group w-50">
+                <a href="#" class="list-group-item">Elemento 1</a>
+                <a href="#" class="list-group-item">Elemento 2</a>
+                <a href="#" class="list-group-item">Elemento 3</a>
+                <a href="#" class="list-group-item">Elemento 4</a>
+            </div>
+        </div>
+        <!-- Con fondo gris al pasar el mouse encima: .list-group-item-action -->
+        <div class="my-3">
+            <div class="list-group w-50">
+                <a href="#" class="list-group-item list-group-item-action">Elemento 1</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 2</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 3</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
+            </div>
+        </div>
+        <!-- Links deshabilitados: .disabled -->
+        <div class="my-3">
+            <div class="list-group w-50">
+                <a href="#" class="list-group-item list-group-item-action disabled">Elemento 1</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 2</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 3</a>
+                <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
+            </div>
+        </div>
+
+        <!-- En horizontal: .list-group-horizontal -->
+        <div class="my-3">
+            <ul class="list-group list-group-horizontal w-50">
+                <li class="list-group-item">Elemento 1</li>
+                <li class="list-group-item">Elemento 2</li>
+                <li class="list-group-item">Elemento 3</li>
+                <li class="list-group-item">Elemento 4</li>
+            </ul>
+        </div>
+
+        <!-- De colores: .list-group-item-{color} -->
+        <div class="my-3">
+            <ul class="list-group w-50">
+                <li class="list-group-item list-group-item-primary">Elemento 1</li>
+                <li class="list-group-item list-group-item-warning">Elemento 2</li>
+                <li class="list-group-item list-group-item-danger">Elemento 3</li>
+                <li class="list-group-item list-group-item-success">Elemento 4</li>
+            </ul>
+        </div>
+
+        <!-- Combinar con badges usando Flexbox -->
+        <div class="my-3">
+            <ul class="list-group w-50">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Escuela
+                    <span class="badge bg-primary rounded-pill">7</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Trabajo
+                    <span class="badge bg-primary rounded-pill">12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Banco
+                    <span class="badge bg-primary rounded-pill">43</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Ejemplo más elaborado -->
+        <div class="my-3">
+            <div class="list-group w-50">
+                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Reunión programada</h5>
+                        <small>Hace 3 horas</small>
+                    </div>
+                    <p class="mb-1">Discutir planes de expansión de la empresa</p>
+                    <small class="badge bg-secondary">Confirmar asistencia</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Reunión programada</h5>
+                        <small class="text-muted">Hace 1 día</small>
+                    </div>
+                    <p class="mb-1">Revisar presentación del plan de negocios</p>
+                    <small class="badge bg-secondary">Confirmar asistencia</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Actividad programada</h5>
+                        <small class="text-muted">Hace 3 días</small>
+                    </div>
+                    <p class="mb-1">Visita a los almacenes de la ciudad</p>
+                    <small class="badge bg-secondary">Confirmar asistencia</small>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

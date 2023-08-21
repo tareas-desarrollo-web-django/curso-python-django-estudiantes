@@ -1,0 +1,13 @@
+div > h1, h2, h3, h4, h5, h6 {
+    width:100%;
+    padding-top: 10px;
+    text-align: center;
+}
+
+div > blockquote, dl {
+    text-align: left;
+}
+
+div > hr {
+    padding: 0;
+}

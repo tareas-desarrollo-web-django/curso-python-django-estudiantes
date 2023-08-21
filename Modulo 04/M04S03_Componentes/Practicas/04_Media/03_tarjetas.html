@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>Tarjetas</title>
+</head>
+<body>
+
+    <div class="container my-5 py-3">
+        <div class="d-flex flex-wrap justify-content-around gap-3">
+
+            <!-- Tarjeta con imagen arriba: .card-img-top -->
+            <div class="card align-self-start" style="width:300px">
+                <img class="card-img-top" src="foto.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Luis Emilio</h4>
+                    <p class="card-text">
+                        Desarrollador Web full-stack. Experto en Python y Django. Con muchos estudios más.
+                    </p>
+                    <div>
+                        <span class="badge bg-primary rounded-pill">Python</span>
+                        <span class="badge bg-primary rounded-pill">Django</span>
+                        <span class="badge bg-primary rounded-pill">HTML</span>
+                        <span class="badge bg-primary rounded-pill">CSS</span>
+                    </div>
+                </div>
+                <!-- Para que la lista se integre bien, tiene que estar fuera del .card-body
+                y debe ser flush -->
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action">Visitar perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ver más información</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta con imagen abajo: .card-img-top -->
+            <div class="card align-self-start" style="width:300px">
+                <div class="card-body">
+                    <h4 class="card-title">Luis Emilio</h4>
+                    <p class="card-text">
+                        Desarrollador Web full-stack. Experto en Python y Django. Con muchos estudios más.
+                    </p>
+                    <div>
+                        <span class="badge bg-primary rounded-pill">Python</span>
+                        <span class="badge bg-primary rounded-pill">Django</span>
+                        <span class="badge bg-primary rounded-pill">HTML</span>
+                        <span class="badge bg-primary rounded-pill">CSS</span>
+                    </div>
+                </div>
+                <!-- Para que la lista se integre bien, tiene que estar fuera del .card-body
+                y debe ser flush -->
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action">Visitar perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ver más información</a>
+                </div>
+                <img class="card-img-bottom" src="foto.jpg">
+            </div>
+
+            
+            <!-- Tarjeta con imagen enmedio, no poniendo nada en <img> -->
+            <div class="card align-self-start" style="width:300px">
+                <div class="card-body">
+                    <h4 class="card-title">Luis Emilio</h4>
+                    <p class="card-text">
+                        Desarrollador Web full-stack. Experto en Python y Django. Con muchos estudios más.
+                    </p>
+                    <div>
+                        <span class="badge bg-primary rounded-pill">Python</span>
+                        <span class="badge bg-primary rounded-pill">Django</span>
+                        <span class="badge bg-primary rounded-pill">HTML</span>
+                        <span class="badge bg-primary rounded-pill">CSS</span>
+                    </div>
+                </div>
+                <img src="foto.jpg">
+                <!-- Para que la lista se integre bien, tiene que estar fuera del .card-body
+                y debe ser flush -->
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action">Visitar perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ver más información</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta con texto sobrepuesto: .card-img-overlay
+            Podemos añadir un poco de opacidad a la imagen con: opacity-{0,25,50,75,100} -->
+            <div class="card align-self-start" style="width:300px">
+                <img class="card-img-top" src="foto.jpg">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Luis Emilio</h4>
+                    <p class="card-text">
+                        Desarrollador Web full-stack. Experto en Python y Django. Con muchos estudios más.
+                    </p>
+                    <div>
+                        <span class="badge bg-primary rounded-pill">Python</span>
+                        <span class="badge bg-primary rounded-pill">Django</span>
+                        <span class="badge bg-primary rounded-pill">HTML</span>
+                        <span class="badge bg-primary rounded-pill">CSS</span>
+                    </div>
+                </div>
+                <!-- Para que la lista se integre bien, tiene que estar fuera del .card-body
+                y debe ser flush -->
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action">Visitar perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ver más información</a>
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+    </div>
+
+</body>
+</html>

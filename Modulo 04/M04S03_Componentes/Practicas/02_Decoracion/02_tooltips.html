@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>Tooltips</title>
+</head>
+<body>
+
+    <!-- Se pueden agregar tooltips a los elementos HTML agregando el atributo
+    <data-bs-toggle="tooltip"> y un mensaje mediante el atributo: title.
+    Además se tienen que inicializar con Javascript -->
+    <div class="container my-5 py-3 border border-dark text-center">
+        
+        <div class="alert alert-danger" data-bs-toggle="tooltip" title="Resolver el problema">
+            Mensaje de alerta
+        </div>
+
+        <button class="btn btn-primary" data-bs-toggle="tooltip" title="Enviar formulario">Enviar</button>
+
+        <div class="container my-4" data-bs-toggle="tooltip" title="Acciones">
+            <div class="btn-group">
+                <button class="btn btn-success">Botón</button>
+                <button class="btn btn-warning">Botón</button>
+                <button class="btn btn-danger">Botón</button>
+                <button class="btn btn-primary">Botón</button>
+                <button class="btn btn-info">Botón</button>
+                <button class="btn btn-dark">Botón</button>
+                <button class="btn btn-secondary">Botón</button>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" data-bs-toggle="tooltip" title="Enviar formulario" data-bs-placement="top">Enviar</button>
+        <button class="btn btn-primary" data-bs-toggle="tooltip" title="Enviar formulario" data-bs-placement="bottom">Enviar</button>
+        <button class="btn btn-primary" data-bs-toggle="tooltip" title="Enviar formulario" data-bs-placement="left">Enviar</button>
+        <button class="btn btn-primary" data-bs-toggle="tooltip" title="Enviar formulario" data-bs-placement="right">Enviar</button>
+        
+    </div>
+
+    <!-- Los tooltips se tienen que inicializar con Javascript con el siguiente código -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    
+</body>
+</html>

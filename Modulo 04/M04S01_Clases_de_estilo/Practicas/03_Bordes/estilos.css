@@ -1,0 +1,18 @@
+div > div {
+    display: table;
+    width:100%;
+    padding-top: 10px;
+}
+
+div > span:first-child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div > span:last-child {
+    display:block;
+    width:100px;
+    height:50px;
+    float:right;
+}
+

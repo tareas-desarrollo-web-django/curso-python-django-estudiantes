@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>Colapsables</title>
+</head>
+<body>
+
+    <div class="container my-5 py-3">
+
+        <!-- Un colapsable normal, escondido por defecto -->
+        <div class="my-5">
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mi_colapsable">Mostrar/ocultar</button>
+            <div id="mi_colapsable" class="collapse">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
+            </div>
+        </div>
+
+        <!-- Un colapsable normal, mostrado por defecto: .show -->
+        <div class="my-5">
+            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#mi_colapsable_2">Mostrar/ocultar</button>
+            <div id="mi_colapsable_2" class="collapse border border-info bg-info bg-opacity-25 rounded-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
+            </div>
+        </div>
+
+        <!-- Acordeon: .accordion -->
+        <div class="accordion" id="mi_acordeon">
+            <!-- Elemento 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="cabecera_1">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#colapsable_1" aria-expanded="true">
+                    Título del elemento
+                    </button>
+                </h2>
+                <div id="colapsable_1" class="accordion-collapse collapse show" aria-labelledby="cabecera_1" data-bs-parent="#mi_acordeon">
+                    <div class="accordion-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas optio incidunt nemo voluptate saepe maiores cumque mollitia ut. Porro, eligendi!
+                    </div>
+                </div>
+            </div>
+            <!-- Elemento 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="cabecera_2">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_2" aria-expanded="false">
+                    Título del elemento
+                    </button>
+                </h2>
+                <div id="colapsable_2" class="accordion-collapse collapse" aria-labelledby="cabecera_2" data-bs-parent="#mi_acordeon">
+                    <div class="accordion-body">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque vel vero perspiciatis dolorem iusto? Itaque fuga aspernatur quam rem minus.
+                    </div>
+                </div>
+            </div>
+            <!-- Elemento 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="cabecera_3">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_3" aria-expanded="false">
+                    Título del elemento
+                    </button>
+                </h2>
+                <div id="colapsable_3" class="accordion-collapse collapse" aria-labelledby="cabecera_3" data-bs-parent="#mi_acordeon">
+                    <div class="accordion-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in reprehenderit corporis vel! Nam ullam rerum ipsum dolore. Quas, impedit.
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+
+</body>
+</html>

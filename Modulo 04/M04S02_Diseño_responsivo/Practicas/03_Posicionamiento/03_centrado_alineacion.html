@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Padding</title>
+</head>
+<body>
+    <!-- Para centrar horizontalmente un elemento, tiene que ser display block, 
+    y además tener un ancho definido que no sea el máximo posible -->
+    <div class="container bg-secondary text-white p-3 my-5" style="height:100px;">
+        <span class="bg-dark d-block w-25 mx-auto">Centrado horizontal</span>
+    </div>
+
+    <!-- El uso más práctico de la alineación en vertical de este tipo 
+    es en celdas. Después veremos contenedores tipo Flex, que nos permitirán
+    alinear elementos HTML y no solo el contenido de celdas. -->
+    <div class="container">
+        <table style="height:100px;border-spacing:30px;" class="bg-secondary w-100 p-5">
+            <tbody>
+                <tr>
+                    <td class="bg-warning border px-4 align-top">top</td>
+                    <td class="bg-warning border px-4 align-middle">middle</td>
+                    <td class="bg-warning border px-4 align-bottom">bottom</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
