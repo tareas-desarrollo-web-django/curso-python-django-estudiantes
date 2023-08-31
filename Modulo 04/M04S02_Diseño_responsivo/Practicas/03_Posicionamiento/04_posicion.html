@@ -12,17 +12,17 @@
     o absolute. Para el caso de absolute, el posicionamiento absoluto se hará 
     con respecto al primer padre en el árbol del DOM que tenga un 
     posicionamiento relativo -->
-    <div class="container bg-secondary text-white p-3 my-5 position-relative" style="height:300px;">
-        <div class="bg-dark position-static w-25">static</div>
-        <div class="bg-dark position-relative start-50 w-25">relative</div>
-        <div class="bg-dark position-absolute start-0 top-0">absolute</div>
-        <div class="bg-dark w-25">static</div>
-    </div>
+    <!-- <div class="container bg-secondary text-white p-0 position-relative" style="height:300px; margin-top: 50px;">
+        <div class="bg-dark position-static start-50 w-25">static</div>
+        <div class="bg-info position-relative w-25 end-0">relative</div>
+        <div class="bg-primary position-absolute start-50 end-0 top-0 bottom-50">absolute</div>
+        <div class="bg-success w-25">static</div>
+    </div> -->
 
     <!-- Los elementos absolute pueden ser dezplazados con las clases
     start-{0, 50, 100}, end-{0, 50, 100}, top-{0, 50, 100}, bottom-{0, 50, 100}.
     -->
-    <div class="container bg-secondary text-white p-3 my-5 position-relative" style="height:300px;">
+    <!-- <div class="container bg-secondary text-white p-3 my-5 position-relative" style="height:300px;">
         <div class="bg-dark position-absolute start-0 top-0">1</div>
         <div class="bg-dark position-absolute start-50 top-0">2</div>
         <div class="bg-dark position-absolute end-0 top-0">3</div>
@@ -32,32 +32,32 @@
         <div class="bg-dark position-absolute start-0 bottom-0">7</div>
         <div class="bg-dark position-absolute start-50 bottom-0">8</div>
         <div class="bg-dark position-absolute end-0 bottom-0">9</div>
-    </div>
+    </div> -->
 
     <!-- Podemos usar la clase translate-middle-x para desplazar horizontalemente
     un elemento absolute un -50%, la clase translate-middle-y para desplazar 
     verticalmente un elemento absolute un -50%, o translate-middle para aplicar
     ambas a la vez. -->
     <div class="container bg-secondary text-white p-3 my-5 position-relative" style="height:300px;">
-        <div class="bg-dark position-absolute start-0 top-0 translate-middle">1</div>
-        <div class="bg-dark position-absolute start-50 top-0 translate-middle">2</div>
-        <div class="bg-dark position-absolute start-100 top-0 translate-middle">3</div>
-        <div class="bg-dark position-absolute start-0 top-50 translate-middle">4</div>
+        <div class="bg-dark position-absolute start-0 top-0">1</div>
+        <div class="bg-dark position-absolute start-50 top-0 translate-middle-x">2</div>
+        <div class="bg-dark position-absolute end-0 top-0">3</div>
+        <div class="bg-dark position-absolute start-0 top-50 translate-middle-y">4</div>
         <div class="bg-dark position-absolute start-50 top-50 translate-middle">5</div>
-        <div class="bg-dark position-absolute start-100 top-50 translate-middle">6</div>
-        <div class="bg-dark position-absolute start-0 top-100 translate-middle">7</div>
-        <div class="bg-dark position-absolute start-50 top-100 translate-middle">8</div>
-        <div class="bg-dark position-absolute start-100 top-100 translate-middle">9</div>
+        <div class="bg-dark position-absolute end-0 top-50 translate-middle-y">6</div>
+        <div class="bg-dark position-absolute start-0 bottom-0">7</div>
+        <div class="bg-dark position-absolute start-50 bottom-0 translate-middle-x">8</div>
+        <div class="bg-dark position-absolute end-0 bottom-0">9</div>
     </div>
 
-    <div class="container bg-secondary text-white p-3">
+    <!-- <div class="container bg-secondary text-white p-3">
         <div class="clearfix">
             <span class="float-start">Izquieda</span>
             <span class="float-end">derecha</span>
         </div> 
-    </div>
+    </div> -->
 
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
@@ -70,14 +70,14 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
-    </div>
+    </div> -->
 
     <!-- Observemos las clases sticky-top y sticky-bottom en acción -->
-    <div class="container-fluid bg-dark text-white p-5 sticky-">
+    <!-- <div class="container-fluid bg-dark text-white p-5 sticky-">
         <h1 class="display-1">Menú muy importante</h1>
-    </div>
+    </div> -->
 
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
@@ -95,7 +95,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatem veritatis sint voluptate aut laboriosam praesentium quod necessitatibus, ipsam dolor, natus quis. Consequuntur temporibus minus, numquam fugit a saepe maiores?</p>
-    </div>
+    </div> -->
 
 </body>
 </html>
