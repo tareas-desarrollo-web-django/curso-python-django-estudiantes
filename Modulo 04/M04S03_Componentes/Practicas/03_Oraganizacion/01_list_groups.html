@@ -9,20 +9,20 @@
     <title>List groups</title>
 </head>
 <body>
+    <!-- Lista agrupada normal: list-group, list-group-item -->
+    <div class="container mt-5">
+        <h4>Lista agrupada básica</h4>
+        <ul class="list-group w-50">
+            <li class="list-group-item">Elemento 1</li>
+            <li class="list-group-item">Elemento 2</li>
+            <li class="list-group-item">Elemento 3</li>
+            <li class="list-group-item">Elemento 4</li>
+        </ul>
+    </div>
 
-    <div class="container my-5 py-3 border border-dark">
-        
-        <!-- Lista agrupada normal: .list-group -->
-        <div class="my-3">
-            <ul class="list-group w-50">
-                <li class="list-group-item">Elemento 1</li>
-                <li class="list-group-item">Elemento 2</li>
-                <li class="list-group-item">Elemento 3</li>
-                <li class="list-group-item">Elemento 4</li>
-            </ul>
-        </div>
-
-        <!-- Con elementos activos: .active -->
+    <!-- Con elementos activos: .active -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con elementos activos</h4>
         <div class="my-3">
             <ul class="list-group w-50">
                 <li class="list-group-item">Elemento 1</li>
@@ -31,8 +31,11 @@
                 <li class="list-group-item">Elemento 4</li>
             </ul>
         </div>
+    </div>
 
-        <!-- Usar links: <div>, <a> -->
+    <!-- Usando links: <div>, <a> -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con links</h4>
         <div class="my-3">
             <div class="list-group w-50">
                 <a href="#" class="list-group-item">Elemento 1</a>
@@ -41,7 +44,11 @@
                 <a href="#" class="list-group-item">Elemento 4</a>
             </div>
         </div>
-        <!-- Con fondo gris al pasar el mouse encima: .list-group-item-action -->
+    </div>
+
+    <!-- Con fondo gris al pasar el mouse encima: .list-group-item-action -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con links resaltados</h4>
         <div class="my-3">
             <div class="list-group w-50">
                 <a href="#" class="list-group-item list-group-item-action">Elemento 1</a>
@@ -50,7 +57,11 @@
                 <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
             </div>
         </div>
-        <!-- Links deshabilitados: .disabled -->
+    </div>
+
+    <!-- Links deshabilitados: .disabled -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con elementos deshabilitados</h4>
         <div class="my-3">
             <div class="list-group w-50">
                 <a href="#" class="list-group-item list-group-item-action disabled">Elemento 1</a>
@@ -59,18 +70,24 @@
                 <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
             </div>
         </div>
+    </div>
 
-        <!-- En horizontal: .list-group-horizontal -->
+    <!-- En horizontal: .list-group-horizontal -->
+    <div class="container mt-5">
+        <h4>Lista agrupada hotizontal</h4>
         <div class="my-3">
-            <ul class="list-group list-group-horizontal w-50">
+            <ul class="list-group list-group-horizontal w-100">
                 <li class="list-group-item">Elemento 1</li>
                 <li class="list-group-item">Elemento 2</li>
                 <li class="list-group-item">Elemento 3</li>
                 <li class="list-group-item">Elemento 4</li>
             </ul>
         </div>
+    </div>
 
-        <!-- De colores: .list-group-item-{color} -->
+    <!-- De colores: .list-group-item-{color} -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con colores</h4>
         <div class="my-3">
             <ul class="list-group w-50">
                 <li class="list-group-item list-group-item-primary">Elemento 1</li>
@@ -79,8 +96,11 @@
                 <li class="list-group-item list-group-item-success">Elemento 4</li>
             </ul>
         </div>
+    </div>
 
-        <!-- Combinar con badges usando Flexbox -->
+    <!-- Combinar con badges usando Flexbox -->
+    <div class="container mt-5">
+        <h4>Lista agrupada con elementos flex</h4>
         <div class="my-3">
             <ul class="list-group w-50">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -97,8 +117,11 @@
                 </li>
             </ul>
         </div>
+    </div>
 
-        <!-- Ejemplo más elaborado -->
+    <!-- Ejemplo más elaborado -->
+    <div class="container mt-5">
+        <h4>Lista agrupada más elaborada</h4>
         <div class="my-3">
             <div class="list-group w-50">
                 <a href="#" class="list-group-item list-group-item-action" aria-current="true">
@@ -127,7 +150,6 @@
                 </a>
             </div>
         </div>
-        
     </div>
     
 </body>

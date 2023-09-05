@@ -10,8 +10,12 @@
 </head>
 <body>
     
-    <!-- Dropdown básico -->
+    <!--
+    Dropdown básico: dropdown, dropdown-toggle, dropdown-menu, dropdown-item 
+    Por defecto se despliega hacia abajo
+    -->
     <div class="container my-2 p-4">
+        <h4>Dropdown básico</h4>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
@@ -24,8 +28,9 @@
         </div>
     </div>
 
-    <!-- Con divisores -->
-    <!-- <div class="container my-2 p-4">
+    <!-- Con divisores: dropdown-divider -->
+    <div class="container my-2 p-4">
+        <h4>Dropdown con divisores</h4>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
@@ -38,10 +43,11 @@
                 <li><a class="dropdown-item" href="#">Opción 4</a></li>
             </ul>
         </div>
-    </div> -->
+    </div>
 
-    <!-- Con cabeceras -->
-    <!-- <div class="container my-2 p-4">
+    <!-- Con cabeceras: dropdown-header -->
+    <div class="container my-2 p-4">
+        <h4>Dropdown con cabeceras</h4>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
@@ -56,10 +62,11 @@
                 <li><a class="dropdown-item" href="#">Opción 4</a></li>
             </ul>
         </div>
-    </div> -->
+    </div>
 
-    <!-- Con opciones marcadas y deshabilitadas -->
-    <!-- <div class="container my-2 p-4">
+    <!-- Con opciones marcadas y deshabilitadas: active, disabled -->
+    <div class="container my-2 p-4">
+        <h4>Con opciones marcadas y deshabilitadas</h4>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
@@ -74,10 +81,11 @@
                 <li><a class="dropdown-item disabled" href="#">Opción 4</a></li>
             </ul>
         </div>
-    </div> -->
+    </div>
 
-    <!-- Cambiar la posición del menú -->
-    <!-- <div class="container my-2 p-4">
+    <!-- Cambiar el despliegue del menú a la derecha: dropend -->
+    <div class="container my-2 p-4">
+        <h4>Dropdown desplegado a la derecha</h4>
         <div class="dropdown dropend">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
@@ -89,18 +97,52 @@
             </ul>
         </div>
     </div>
+    <!-- 
+    Cambiar el despliegue del menú a la izquierda: dropstart
+    Hay que asegurarse que haya espacio, ya que si no hay entonces se 
+    desplegará a la derecha.
+     -->
     <div class="container my-2 p-4">
+        <h4>Dropdown desplegado a la izquierda</h4>
         <div class="dropdown dropstart" style="margin-left: 120px;">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                 Botón de menú
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Opción 1</a></li>
+                <li><a class="dropdown-item text-primary" href="#">Opción 1</a></li>
                 <li><a class="dropdown-item" href="#">Opción 2</a></li>
                 <li><a class="dropdown-item" href="#">Opción 3</a></li>
             </ul>
         </div>
-    </div> -->
+    </div>
+
+    <!-- Podemos estilizarlo usando la mayoría de las clases de bootstrap -->
+    <div class="container my-2 p-4">
+        <h4>Dropdown estilizado</h4>
+        <div class="dropdown">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                Botón de menú
+            </button>
+            <ul class="dropdown-menu py-0">
+                <li><h1 class="dropdown-header text-primary bg-warning">Parte 1</h1></li>
+                <li><a class="dropdown-item border rounded-pill" href="#">Opción 1</a></li>
+                <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                <li><h1 class="dropdown-header text-primary bg-warning">Parte 2</h1></li>
+                <li><a class="dropdown-item" href="#">Opción 4</a></li>
+                <li><a class="dropdown-item d-flex justify-content-between" href="#">
+                        <span>Mensajes</span>
+                        <span class="rounded-circle px-2 bg-danger text-white">5</span>
+                </a></li>
+                <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                    <span>Mensajes</span>
+                    <div class="spinner-grow spinner-grow-sm text-danger position-relative">
+                        <span class="text-white position-absolute start-50 top-50 translate-middle">5</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 </html>
