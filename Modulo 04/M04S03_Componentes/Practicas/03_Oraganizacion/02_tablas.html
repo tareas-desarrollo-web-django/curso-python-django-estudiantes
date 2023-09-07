@@ -12,8 +12,9 @@
 
     <div class="container my-5 py-3 border border-dark">
         
-        <!-- Tabla básica: .table -->
+        <!-- Tabla básica: table -->
         <div class="my-5">
+            <h4>Tabla básica</h4>
             <table class="table">
                 <thead>
                 <tr>
@@ -42,8 +43,9 @@
             </table>
         </div>
 
-        <!-- Con filas rayadas: .table-striped -->
+        <!-- Con filas intercaladas: table-striped -->
         <div class="my-5">
+            <h4>Tabla con filas filas intercaladas</h4>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -72,8 +74,44 @@
             </table>
         </div>
 
-        <!-- Con bordes: .table-bordered -->
+        <!-- Con columnas intercaladas: table-striped-columns -->
         <div class="my-5">
+            <h4>Tabla con filas filas intercaladas</h4>
+            <table class="table table-striped-columns">
+                <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Infijo</th>
+                    <th>Dimensiones</th>
+                    <th>Unidades</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Extra chica</td>
+                    <td>None</td>
+                    <td> &lt; 576</td>
+                    <td>px</td>
+                </tr>
+                <tr>
+                    <td>Chica</td>
+                    <td>sm</td>
+                    <td> &ge;576 </td>
+                    <td>px</td>
+                </tr>
+                <tr>
+                    <td>Mediana</td>
+                    <td>md</td>
+                    <td> &ge;768 </td>
+                    <td>px</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla con todos los bordes: table-bordered -->
+        <div class="my-5">
+            <h4>Tabla con todos los bordes</h4>
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
@@ -102,8 +140,40 @@
             </table>
         </div>
 
-        <!-- Con marcado de filas al pasar: .table-hover -->
+        <!-- Tabla sin bordes: table-borderless -->
         <div class="my-5">
+            <h4>Tabla sin bordes</h4>
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Infijo</th>
+                    <th>Dimensiones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Extra chica</td>
+                    <td>None</td>
+                    <td> &lt; 576</td>
+                </tr>
+                <tr>
+                    <td>Chica</td>
+                    <td>sm</td>
+                    <td> &ge;576 </td>
+                </tr>
+                <tr>
+                    <td>Mediana</td>
+                    <td>md</td>
+                    <td> &ge;768 </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Con marcado de filas al pasar: table-hover -->
+        <div class="my-5">
+            <h4>Tabla con filas que reaccionan al pasar el puntero</h4>
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -132,8 +202,9 @@
             </table>
         </div>
 
-        <!-- Tabla de color: .table-{color} -->
+        <!-- Tabla de color: table-{color} -->
         <div class="my-5">
+            <h4>Tabla con color</h4>
             <table class="table table-striped table-dark">
                 <thead>
                 <tr>
@@ -161,6 +232,133 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Colores en cada fila: table-{color} -->
+        <div class="my-5">
+            <h4>Tabla con color por cada fila</h4>
+            <table class="table">
+                <thead>
+                <tr class="table-dark">
+                    <th>Breakpoint</th>
+                    <th>Infijo</th>
+                    <th>Dimensiones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-success">
+                    <td>Extra chica</td>
+                    <td>None</td>
+                    <td> &lt; 576</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>Chica</td>
+                    <td>sm</td>
+                    <td> &ge;576 </td>
+                </tr>
+                <tr class="table-danger">
+                    <td>Mediana</td>
+                    <td>md</td>
+                    <td> &ge;768 </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Colores en cada celda: table-{color} -->
+        <div class="my-5">
+            <h4>Tabla con color por cada fila</h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="table-success">Breakpoint</th>
+                    <th class="table-warning">Infijo</th>
+                    <th class="table-success">Dimensiones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="table-danger">Extra chica</td>
+                    <td>None</td>
+                    <td class="table-danger"> &lt; 576</td>
+                </tr>
+                <tr>
+                    <td>Chica</td>
+                    <td class="table-danger">sm</td>
+                    <td> &ge;576 </td>
+                </tr>
+                <tr>
+                    <td class="table-danger">Mediana</td>
+                    <td>md</td>
+                    <td class="table-danger"> &ge;768 </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 
+        Tabla responsiva con scroll horizontal, para lograr esto la tabla se tiene
+        que poner dentro de un div con una clase 'table-responsive-{breakpoint}'
+        -->
+        <div class="my-5">
+            <h4>Tabla responsiva con scroll horizontal</h4>
+            <div class="table-responsive">
+                <table class="table table-striped-columns">
+                    <thead>
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Infijo</th>
+                        <th>Dimensiones</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                        <th>Unidades</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Extra chica</td>
+                        <td>None</td>
+                        <td> &lt; 576</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                    </tr>
+                    <tr>
+                        <td>Chica</td>
+                        <td>sm</td>
+                        <td> &ge;576 </td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                    </tr>
+                    <tr>
+                        <td>Mediana</td>
+                        <td>md</td>
+                        <td> &ge;768 </td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                        <td>px</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         
     </div>
     

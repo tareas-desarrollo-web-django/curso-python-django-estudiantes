@@ -9,26 +9,32 @@
     <title>Colapsables</title>
 </head>
 <body>
+    <!--
+    Colapsable básico: data-bs-toggle="collapse", data-bs-target="#ID_objetivo", class="collapse"
+    Podemos iniciarlo como expandido: show
+    Está contraido por defecto
+    -->
+    <div class="container my-5 py-3 border border-dark rounded-2">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mi_colapsable">Mostrar/ocultar</button>
+        <div id="mi_colapsable" class="collapse">
+            <p class="m-3 border border-dark rounded-3 p-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
+            </p>
+        </div>
+    </div>
 
+    <!-- Podemos iniciarlo como expandido: show -->
     <div class="container my-5 py-3">
-
-        <!-- Un colapsable normal, escondido por defecto -->
-        <div class="my-5">
-            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mi_colapsable">Mostrar/ocultar</button>
-            <div id="mi_colapsable" class="collapse">
+        <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#mi_colapsable_2">Mostrar/ocultar</button>
+        <div id="mi_colapsable_2" class="collapse show">
+            <p class="border border-info bg-info bg-opacity-25 rounded-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
-            </div>
+            </p>
         </div>
+    </div>
 
-        <!-- Un colapsable normal, mostrado por defecto: .show -->
-        <div class="my-5">
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#mi_colapsable_2">Mostrar/ocultar</button>
-            <div id="mi_colapsable_2" class="collapse border border-info bg-info bg-opacity-25 rounded-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
-            </div>
-        </div>
-
-        <!-- Acordeon: .accordion -->
+    <!-- Acordeon: .accordion -->
+    <div class="container my-5 py-3">
         <div class="accordion" id="mi_acordeon">
             <!-- Elemento 1 -->
             <div class="accordion-item">
@@ -70,7 +76,6 @@
                 </div>
             </div>
         </div>
-         
     </div>
 
 </body>
