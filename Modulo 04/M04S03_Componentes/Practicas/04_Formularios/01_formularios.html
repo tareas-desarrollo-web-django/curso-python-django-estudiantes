@@ -10,40 +10,45 @@
 </head>
 <body>
 
-    
-    <!-- Contenedor auxliar -->
     <div class="container">
-
-        <!-- Formulario: podemos usar la clase .row en <form> para organizar el formulario en una cuadrícula -->
         <form action="#" class="bg-light border mt-3 p-3 rounded">
             
-            <!-- Etiquetas normales -->
-            <!-- Podemos darle un mejor estilo a algunos elementos <input> y <textarea>
-            con la clase .form-control, además podemos ajustar el tamaño agregando .form-control-{sm, lg} -->
+            <!-- 
+            Etiquetas normales: form-label
+            Inputs: form-control
+            -->
+            <h4>Etiquetas normales</h4>
             <div class="my-3">
                 <label for="correo" class="form-label">Correo:</label>
-                <input type="email" class="form-control" id="correo" placeholder="Correo" name="correo">
+                <input type="email" class="form-control" id="correo" placeholder="" name="correo">
             </div>
 
-            <!-- Etiquetas flotantes: con la clase .form-floating. Debemos poner un placeholder en el <input> y
-            el input debe estar antes que la etiqueta. -->
+            <!-- 
+            Etiquetas flotantes: encapsuladas en un 'form-floating'
+            Además, debemos poner un placeholder en el <input>, aunque sea vacío, 
+            y el <input> debe ir antes que el <label>.
+            -->
+            <h4>Etiquetas Flotantes</h4>
             <div class="form-floating my-3">
-                <input type="email" class="form-control" id="etiqueta_flotante" placeholder="x">
+                <input type="email" class="form-control" id="etiqueta_flotante" placeholder="">
                 <label for="etiqueta_flotante">Correo</label>
             </div>
             <!-- Funciona también con <textarea> -->
             <div class="form-floating my-3">
-                <textarea class="form-control" placeholder="x" id="etiqueta_flotante_2" style="height:100px"></textarea>
+                <textarea class="form-control" placeholder="" id="etiqueta_flotante_2" style="height:100px"></textarea>
                 <label for="etiqueta_flotante_2">Comentarios</label>
             </div>
 
             <!-- Podemos deshabilitar campos <input> o ponerlos como readonly  -->
-            <input type="text" class="form-control my-1" placeholder="Nombre">
-            <input type="text" class="form-control my-1" placeholder="Nombre deshabilitado" disabled>
-            <input type="text" class="form-control my-1" placeholder="Esto es de solo lectura" readonly>
+            <h4>Input deshabilitados y de solo lectura</h4>
+            <div class="py-3">
+                <input type="text" class="form-control my-1" placeholder="Nombre">
+                <input type="text" class="form-control my-1" placeholder="Nombre deshabilitado" disabled>
+                <input type="text" class="form-control my-1" placeholder="Esto es de solo lectura" readonly>
+            </div>
             
-            <!-- Menús de selección: .form-select
-            - Podemos cambiar el tamaño añadiendo: .form-select-{sm, lg} -->
+            <!-- Campos de selección: form-select -->
+            <h4>Campos de selección</h4>
             <div class="my-3">
                 <h6>Tecnología</h6>
                 <select class="form-select" id="mi_select">
@@ -54,7 +59,8 @@
                 </select>
             </div>
 
-            <!-- Casilla se selección: .form-check .form-check-input .form-check-label -->
+            <!-- Casilla se selección: form-check, form-check-input, form-check-label -->
+            <h4>Casillas de selección</h4>
             <div class="my-3">
                 <h6>Intereses</h6>
                 <div class="form-check">
@@ -62,7 +68,7 @@
                     <label class="form-check-label" for="check_1">Entretenimineto</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check_2" name="int_2" value="humor">
+                    <input class="form-check-input" type="checkbox" id="check_2" name="int_2" value="humor" checked>
                     <label class="form-check-label" for="check_2">Humor</label>
                 </div>
                 <div class="form-check">
@@ -75,7 +81,11 @@
                 </div>
             </div>
 
-            <!-- Botones de radio o de selección: no olvidar que todos deben tener el mismo 'name' -->
+            <!--
+            Botones de radio: form-check, form-check-input, form-check-label
+            No olvidar que todos deben tener el mismo valor en 'name'
+            -->
+            <h4>Botones de radio</h4>
             <div class="my-3">
                 <h6>Edad</h6>
                 <div class="form-check">
@@ -92,11 +102,12 @@
                 </div>
             </div>
 
-            <!-- Switches: .form-check .form-switch -->
+            <!-- Checboxes en forma de switches: .form-check .form-switch -->
+            <h4>Checboxes en forma de switches</h4>
             <div class="my-3">
                 <h6>Intereses</h6>
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="switch_1" name="int_1" value="entretenimineto">
+                    <input class="form-check-input" type="checkbox" id="switch_1" name="int_1" value="entretenimineto" checked>
                     <label class="form-check-label" for="switch_1">Entretenimineto</label>
                 </div>
                 <div class="form-check form-switch">
@@ -109,13 +120,15 @@
                 </div>
             </div>
 
-            <!-- Seleccionador de color: .form-control .form-control-color -->
+            <!-- Selector de color: .form-control .form-control-color -->
+            <h4>Selector de color</h4>
             <div class="my-3">
                 <label for="color" class="form-label">Color</label>
                 <input type="color" class="form-control form-control-color" id="color" value="#563d7c" title="Choose your color">
             </div>
 
-            <!-- Entradas agrupadas: .input-group .input-group-text -->
+            <!-- Entradas agrupadas: input-group, input-group-text, form-control -->
+            <h4>Entradas agrupadas</h4>
             <div class="my-3">
                 <div class="input-group my-1">
                     <span class="input-group-text">Nombre</span>
@@ -127,7 +140,8 @@
                 </div>
             </div>
 
-            <!-- Seleccionador de archivos -->
+            <!-- Selector de archivos -->
+            <h4>Selector de archivos</h4>
             <div class="my-3">
                 <label for="archivo" class="form-label">Cargar archivo</label>
                 <input class="form-control" type="file" id="archivo">
