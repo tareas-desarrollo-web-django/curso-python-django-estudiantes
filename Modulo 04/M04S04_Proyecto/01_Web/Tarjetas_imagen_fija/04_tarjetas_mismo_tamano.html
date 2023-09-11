@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>Tarjetas</title>
+</head>
+<body>
+
+        <!-- Ejemplo de tarjetas que reservan el mismo espacio para la imagen, de forma que la imagen no 
+        altere el tamaño de la tarjeta. Aunque aún podría alerarse con el demás contenido de la tarjeta.
+        En este ejemplo en particular, la tarjeta tiene un ancho de 300px, y el espacio reservado para
+        el contenedor de la imagen es de 300x300px -->
+        <div class="card" style="width:300px;">
+            <div style="width:300px; height:300px;" class="d-flex justify-content-center align-items-center">
+                <img src="img1.jpg" alt="img/cpu1.png" style="max-width:300px; max-height:300px" class="p-4">
+            </div>
+            
+            <div class="card-body pt-5">
+                <h4 class="card-title d-flex justify-content-between align-content-center">
+                    Título
+                    <small class="text-success"><i class="fa-solid fa-circle-check"></i></small>
+                </h4>
+                <p class="card-text">
+                    Descripción
+                </p>
+            </div>
+        </div>
+
+        <!-- Otra tarjeta más de ejemplo -->
+        <div class="card" style="width:300px;">
+            <div style="width:300px; height:300px;" class="d-flex justify-content-center align-items-center">
+                <img src="img5.jpg" alt="img/cpu1.png" style="max-width:300px; max-height:300px"  class="p-4">
+            </div>
+            
+            <div class="card-body pt-5">
+                <h4 class="card-title d-flex justify-content-between align-content-center">
+                    Título
+                    <small class="text-success"><i class="fa-solid fa-circle-check"></i></small>
+                </h4>
+                <p class="card-text">
+                    Descripción
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
