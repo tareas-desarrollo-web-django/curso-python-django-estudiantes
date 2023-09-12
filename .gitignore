@@ -8,7 +8,7 @@
 # Any file/folder that looks like an office auxiliary file/folder
 **/~*
 # MS Word files
-**.docx
+# **.docx
 # MS Power Point
 **.pptx
 # notas
