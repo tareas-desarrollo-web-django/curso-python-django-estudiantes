@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.conf import settings as django_settings
+
+import pdb
 
 
 # Create your views here.
-def settings(request):
-    return HttpResponse(django_settings.ENTORNO)
+def registro(request):
+    if request.method == "GET":
+        return render(request, 'usuarios/registro.html')
+    elif request.method == "POST":
+        print(request.POST)
+        return HttpResponse('Formulario enviado')
+
+
+
+

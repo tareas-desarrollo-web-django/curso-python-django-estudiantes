@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Validación</title>
+</head>
+<body>
+    <!-- 
+    Para validar un formulario con Bootstrap se necesita lo siguiente:
+    - Agregar al <form> la clase: needs-validation
+    - Agregar al <form> el atributo: novalidate
+    - Aplican a elementos: <input>, <select>, y <textarea>
+    - Agregar el atributo 'required' HTML al elemento a validar
+    - Podemos definir mensajes de error o de éxito: valid-feedback, invalid-feedback
+    - Necesita de código Javascript para inicializar la validación
+    - Por defecto los campos inician sin validación, pero podemos asignarles una validación a los <input>, <select>, y <textarea> con las clases 'is-valid' y 'is-invalid', aunque estas clases son más para usarse en el backend.
+    -->
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-secondary">
+
+        <div class="shadow w-75">
+            <h1 class="display-4 bg-dark text-white py-4 px-3 rounded-top border border-dark my-0">Registrarse</h1>
+            <div class="rounded-bottom border border-dark  bg-light">
+                <form class="needs-validation p-4" method="post" novalidate>
+                    {% csrf_token %}
+                    <span class="d-none d-sm-inline">Registrar nuevo usuario</span>
+                    <div class="input-group my-2 pt-4">
+                        <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Usuario" name="nombre" required>
+                        <div class="valid-feedback">Muy bien!</div>
+                        <div class="invalid-feedback">El nombre es obligatorio</div>
+                    </div>
+                    <div class="input-group my-2">
+                        <span class="input-group-text"><i class="fa-solid fa-at"></i></span>
+                        <input type="text" class="form-control" placeholder="e-mail" name="email" required>
+                        <div class="valid-feedback">Muy bien!</div>
+                        <div class="invalid-feedback">La dirección es obligatoria</div>
+                    </div>
+                    <div class="input-group my-2">
+                        <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                        <input type="text" class="form-control" placeholder="Contraseña" name="password1" required>
+                        <div class="valid-feedback">Muy bien!</div>
+                        <div class="invalid-feedback">La dirección es obligatoria</div>
+                    </div>
+                    <div class="input-group my-2">
+                        <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                        <input type="text" class="form-control" placeholder="Repetir contraseña" name="password2" required>
+                        <div class="valid-feedback">Muy bien!</div>
+                        <div class="invalid-feedback">La dirección es obligatoria</div>
+                    </div>
+                    <div class="d-flex mt-1 flex-wrap justify-content-between text-secondary align-items-baseline">
+                        <a href="" class="text-decoration-none"><small>Recuperar contraseña</small></a>
+                        <button type="submit" class="btn btn-outline-dark mt-3">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Código Javascript para validar los formularios que tengan la clase: .needs-validation -->
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+
+</body>
+</html>
