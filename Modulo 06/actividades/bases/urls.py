@@ -8,6 +8,7 @@ urlpatterns = [
     path('vista_clase/', views.VistaClase.as_view(), name='vista_clase'),
     path('vista_plantilla/', views.VistaPlantilla.as_view(), name='vista_plantilla'),
     path('mi_plantilla/', views.MiPlantilla.as_view(), name='mi_plantilla'),
+    path('django_plantilla/', views.DjangoPlantilla.as_view(), name='django_plantilla'),
 ]
 
 

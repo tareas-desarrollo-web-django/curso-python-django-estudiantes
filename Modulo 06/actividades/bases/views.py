@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 
 
 def vista_funcion(request):
@@ -57,9 +58,11 @@ class VistaPlantilla(View):
 
 
 class MiPlantilla(VistaPlantilla):
-    plantilla = 'bases/index_2.html'
-    contexto_extra = {'mensaje':'Envía el formulario!'}
+    plantilla = 'bases/index.html'
+    contexto_extra = {'tarjetas':range(8)}
 
 
-
+class DjangoPlantilla(TemplateView):
+    template_name = 'bases/index.html'
+    extra_context = {'tarjetas':range(12)}
 
