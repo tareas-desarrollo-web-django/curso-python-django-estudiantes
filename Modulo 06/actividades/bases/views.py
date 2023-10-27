@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 
 from .models import Tarea
+from .forms import TareaForm
 
 
 def vista_funcion(request):
@@ -79,5 +80,7 @@ class CrearTarea(CreateView):
     template_name = 'bases/crear_tarea.html'
     model = Tarea
     fields = ["titulo", "descripcion", "fecha_inicio", "fecha_limite"]
+    # form_class = TareaForm
     success_url = reverse_lazy('bases:crear_tarea')
+    extra_context = {}
 

@@ -11,22 +11,34 @@
                 {% csrf_token %}
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-heading"></i></span>
-                    <input type="text" class="form-control" placeholder="Título" name="titulo" required>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo" {% if form.titulo.value %}value="{{form.titulo.value}}"{% endif %}>
+                    {% for error in form.titulo.errors %}
+                    <div class="invalid-feedback d-block">{{error}}</div>
+                    {% endfor %}
                 </div>
 
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-pen"></i></span>
-                    <input type="text" class="form-control" placeholder="Título" name="descripcion" required>
+                    <input type="text" class="form-control" placeholder="Título" name="descripcion" {% if form.descripcion.value %}value="{{form.descripcion.value}}"{% endif %}>
+                    {% for error in form.descripcion.errors %}
+                    <div class="invalid-feedback d-block">{{error}}</div>
+                    {% endfor %}
                 </div>
 
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
-                    <input type="date" class="form-control" placeholder="Título" name="fecha_inicio" required>
+                    <input type="text" class="form-control" placeholder="Título" name="fecha_inicio" {% if form.fecha_inicio.value %}value="{{form.fecha_inicio.value}}"{% endif %}>
+                    {% for error in form.fecha_inicio.errors %}
+                    <div class="invalid-feedback d-block">{{error}}</div>
+                    {% endfor %}
                 </div>
 
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
-                    <input type="date" class="form-control" placeholder="Título" name="fecha_limite" required>
+                    <input type="text" class="form-control" placeholder="Título" name="fecha_limite" {% if form.fecha_limite.value %}value="{{form.fecha_limite.value}}"{% endif %}>
+                    {% for error in form.fecha_limite.errors %}
+                    <div class="invalid-feedback d-block">{{error}}</div>
+                    {% endfor %}
                 </div>
 
 
@@ -35,9 +47,10 @@
                 </div>
             </form>
 
-
         </div>
     </div>
 </div>
+
+
 
 {% endblock %}
