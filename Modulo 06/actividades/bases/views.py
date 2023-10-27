@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
+from django.urls import reverse_lazy
+
+from .models import Tarea
 
 
 def vista_funcion(request):
@@ -64,5 +67,17 @@ class MiPlantilla(VistaPlantilla):
 
 class DjangoPlantilla(TemplateView):
     template_name = 'bases/index.html'
-    extra_context = {'tarjetas':range(12)}
+    extra_context = {'tarjetas':range(10)}
+
+    def post(self, request):
+        contexto = {'datos':request.POST}
+        contexto.update(self.get_context_data())
+        return render(request, 'bases/index.html', contexto)
+
+
+class CrearTarea(CreateView):
+    template_name = 'bases/crear_tarea.html'
+    model = Tarea
+    fields = ["titulo", "descripcion", "fecha_inicio", "fecha_limite"]
+    success_url = reverse_lazy('bases:crear_tarea')
 
