@@ -27,7 +27,7 @@
 
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
-                    <input type="text" class="form-control" placeholder="Título" name="fecha_inicio" {% if form.fecha_inicio.value %}value="{{form.fecha_inicio.value}}"{% endif %}>
+                    <input type="date" class="form-control" placeholder="Título" name="fecha_inicio" {% if form.fecha_inicio.value %}value="{{form.fecha_inicio.value}}"{% endif %}>
                     {% for error in form.fecha_inicio.errors %}
                     <div class="invalid-feedback d-block">{{error}}</div>
                     {% endfor %}
@@ -35,7 +35,7 @@
 
                 <div class="input-group my-2 pt-4">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
-                    <input type="text" class="form-control" placeholder="Título" name="fecha_limite" {% if form.fecha_limite.value %}value="{{form.fecha_limite.value}}"{% endif %}>
+                    <input type="date" class="form-control" placeholder="Título" name="fecha_limite" {% if form.fecha_limite.value %}value="{{form.fecha_limite.value}}"{% endif %}>
                     {% for error in form.fecha_limite.errors %}
                     <div class="invalid-feedback d-block">{{error}}</div>
                     {% endfor %}
