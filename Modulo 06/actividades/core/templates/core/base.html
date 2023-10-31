@@ -14,6 +14,7 @@
 <body>
     {% url 'usuarios:registro' as url_registro %}
     {% url 'usuarios:iniciar_sesion' as url_iniciar_sesion %}
+    {% url 'usuarios:cambiar_password' as url_cambiar_password %}
     
     <!-- Cabecera -->
     <div class="container-fluid text-light p-5" id="cabecera">
@@ -56,6 +57,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'usuarios:cerrar_sesion' %}">
                                 Cerrar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_cambiar_password %}active{% endif %}" href="{% url 'usuarios:cambiar_password' %}">
+                                Cambiar contraseña
                             </a>
                         </li>
                         {% else %}

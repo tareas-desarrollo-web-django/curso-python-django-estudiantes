@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse
 from django.views.generic import CreateView, View
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 
 import pdb
 
@@ -24,9 +24,16 @@ class IniciarSesion(LoginView):
 class CerrarSesion(LogoutView):
     next_page = reverse_lazy('usuarios:iniciar_sesion')
 
+    def dispatch(self, request, *args, **kwargs):
+        print(f"Cerrando la sesión de {request.user.username}")
+        resp = super().dispatch(request, *args, **kwargs)
+        print(f"Cerrando la sesión de {request.user.username}")
 
-class CambiarPassword(View):
-    def get(self, request):
-        return HttpResponse('Vista de Cambiar Password')
+        return resp
+
+
+class CambiarPassword(PasswordChangeView):
+    template_name = 'usuarios/cambiar_password.html'
+    success_url = reverse_lazy('usuarios:cerrar_sesion')
 
 
