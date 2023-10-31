@@ -12,6 +12,8 @@
     <title>Webstore</title>
 </head>
 <body>
+    {% url 'usuarios:registro' as url_registro %}
+    {% url 'usuarios:iniciar_sesion' as url_iniciar_sesion %}
     
     <!-- Cabecera -->
     <div class="container-fluid text-light p-5" id="cabecera">
@@ -51,12 +53,12 @@
                     </ul>
                     <ul class="navbar-nav mb-0 pt-3 pt-sm-0">
                         <li class="nav-item">
-                            <a class="nav-link " href="">
+                            <a class="nav-link {% if request.path == url_iniciar_sesion %}active{% endif %}" href="{% url 'usuarios:iniciar_sesion' %}">
                                 Iniciar sesión
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="">
+                            <a class="nav-link {% if request.path == url_registro %}active{% endif %}" href="{% url 'usuarios:registro' %}">
                                 Registrarse
                             </a>
                         </li>
