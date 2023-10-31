@@ -3,7 +3,7 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse
 from django.views.generic import CreateView, View
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 import pdb
 
@@ -21,11 +21,12 @@ class IniciarSesion(LoginView):
     next_page = reverse_lazy('core:home')
 
 
-class CerrarSesion(View):
-    def get(self, request):
-        return HttpResponse('Vista de Cerrar Sesión')
+class CerrarSesion(LogoutView):
+    next_page = reverse_lazy('usuarios:iniciar_sesion')
 
 
 class CambiarPassword(View):
     def get(self, request):
         return HttpResponse('Vista de Cambiar Password')
+
+

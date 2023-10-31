@@ -52,6 +52,13 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-0 pt-3 pt-sm-0">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'usuarios:cerrar_sesion' %}">
+                                Cerrar sesión
+                            </a>
+                        </li>
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == url_iniciar_sesion %}active{% endif %}" href="{% url 'usuarios:iniciar_sesion' %}">
                                 Iniciar sesión
@@ -62,6 +69,7 @@
                                 Registrarse
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
