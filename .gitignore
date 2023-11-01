@@ -11,8 +11,8 @@
 # **.docx
 # MS Power Point
 **.pptx
-# notas
-Notas para las clases.txt
+# Ajustes de host
+**/settings/host.py
 
 ##############################################################################
 # Standar template 
