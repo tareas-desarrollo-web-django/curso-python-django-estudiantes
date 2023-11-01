@@ -15,6 +15,7 @@
     {% url 'usuarios:registro' as url_registro %}
     {% url 'usuarios:iniciar_sesion' as url_iniciar_sesion %}
     {% url 'usuarios:cambiar_password' as url_cambiar_password %}
+    {% url 'actividades:nueva' as url_actividades_nueva %}
     
     <!-- Cabecera -->
     <div class="container-fluid text-light p-5" id="cabecera">
@@ -45,12 +46,14 @@
 
                 <div class="collapse navbar-collapse" id="contenido_navbar">
                     <ul class="navbar-nav me-auto mb-0 pt-3 pt-sm-0">
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link " href="">Actividades</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="">Nueva actividad</a>
+                            <a class="nav-link {% if request.path == url_actividades_nueva %}active{% endif %}" href="{{url_actividades_nueva}}">Nueva actividad</a>
                         </li>
+                        {% endif %}
                     </ul>
                     <ul class="navbar-nav mb-0 pt-3 pt-sm-0">
                         {% if user.is_authenticated %}
@@ -60,18 +63,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == url_cambiar_password %}active{% endif %}" href="{% url 'usuarios:cambiar_password' %}">
+                            <a class="nav-link {% if request.path == url_cambiar_password %}active{% endif %}" href="{{url_cambiar_password}}">
                                 Cambiar contraseña
                             </a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == url_iniciar_sesion %}active{% endif %}" href="{% url 'usuarios:iniciar_sesion' %}">
+                            <a class="nav-link {% if request.path == url_iniciar_sesion %}active{% endif %}" href="{{url_iniciar_sesion}}">
                                 Iniciar sesión
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == url_registro %}active{% endif %}" href="{% url 'usuarios:registro' %}">
+                            <a class="nav-link {% if request.path == url_registro %}active{% endif %}" href="{{url_registro}}">
                                 Registrarse
                             </a>
                         </li>
