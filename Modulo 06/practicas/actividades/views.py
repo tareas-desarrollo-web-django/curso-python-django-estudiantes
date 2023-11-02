@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+# Para el email
 from django.conf import settings
 from django.core import mail
 from django.template.loader import render_to_string
@@ -11,6 +12,26 @@ from pathlib import Path
 from email.mime.image import MIMEImage
 
 from .models import Actividad, Importancia, Estado
+
+import pdb
+
+
+class Email(TemplateView):
+    template_name = 'actividades/email.html'
+
+    def get_context_data(self, *args, **kwargs):
+        # pdb.set_trace()
+        contexto = super().get_context_data(*args, **kwargs)
+
+        actividad = Actividad.objects.filter(id=1)[0]
+        urls = {
+            "home": self.request.build_absolute_uri(reverse("core:home")),
+            'detalle': self.request.build_absolute_uri(reverse('actividades:detalle', args=(actividad.id,)))
+        }
+
+        contexto.update({'urls': urls, 'actividad':actividad})
+
+        return contexto
 
 
 class Nueva(LoginRequiredMixin, CreateView):
@@ -72,8 +93,41 @@ class Nueva(LoginRequiredMixin, CreateView):
         msg.send()
 
 
-class Lista(TemplateView):
+class Lista(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
     template_name = 'actividades/lista.html'
+    # model = Actividad
+    context_object_name = 'actividades'
+    paginate_by = 3
+    page_kwarg = 'pagina'
+
+    def get_queryset(self):
+        importancia_pk = self.request.GET.get('ipk', None)
+        estado_pk = self.request.GET.get('epk', None)
+
+        if importancia_pk and not importancia_pk.isdigit():
+            importancia_pk= None
+        if estado_pk and not estado_pk.isdigit():
+            estado_pk= None
+        
+        actividades = Actividad.objects.filter(usuario=self.request.user)
+
+        if importancia_pk:
+            actividades = actividades.filter(importancia=importancia_pk)
+        if estado_pk:
+            actividades = actividades.filter(estado=estado_pk)
+
+        return actividades
+        
+    def get_context_data(self, **kwargs):
+        contexto = super().get_context_data(**kwargs)
+
+        get_params = '&'.join([f'{p}={k}' for p,k in self.request.GET.items() if p != self.page_kwarg])
+        contexto['get_params'] = get_params
+        
+        return contexto
+    
+    
 
 
 class Generador(TemplateView):

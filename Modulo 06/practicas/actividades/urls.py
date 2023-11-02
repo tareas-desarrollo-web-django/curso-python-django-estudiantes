@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'actividades'
 urlpatterns = [
+    path('email/', views.Email.as_view(), name='email'),
     path('nueva/', views.Nueva.as_view(), name='nueva'),
     path('lista/', views.Lista.as_view(), name='lista'),
     path('generador/', views.Generador.as_view(), name='generador'),
