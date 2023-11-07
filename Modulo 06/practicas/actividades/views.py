@@ -12,9 +12,15 @@ from django.utils.html import strip_tags
 from pathlib import Path
 from email.mime.image import MIMEImage
 
+# Para la vista del generador
 import lorem
 import datetime
 import random
+
+# Para la vista de detalle
+from reportlab.pdfgen import canvas
+from reportlab.lib import pagesizes
+import io
 
 from .models import Actividad, Importancia, Estado
 
