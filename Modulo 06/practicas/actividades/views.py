@@ -98,7 +98,7 @@ class Lista(LoginRequiredMixin, ListView):
     template_name = 'actividades/lista.html'
     # model = Actividad
     context_object_name = 'actividades'
-    paginate_by = 3
+    paginate_by = 4
     page_kwarg = 'pagina'
 
     def get_queryset(self):
@@ -126,12 +126,11 @@ class Lista(LoginRequiredMixin, ListView):
         contexto['get_params'] = get_params
         
         return contexto
-    
-    
 
 
 class Generador(TemplateView):
     template_name = 'actividades/generador.html'
+
 
 
 class Detalle(TemplateView):

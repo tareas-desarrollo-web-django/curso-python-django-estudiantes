@@ -16,6 +16,8 @@
     {% url 'usuarios:iniciar_sesion' as url_iniciar_sesion %}
     {% url 'usuarios:cambiar_password' as url_cambiar_password %}
     {% url 'actividades:nueva' as url_actividades_nueva %}
+    {% url 'actividades:lista' as url_actividades_lista %}
+    {% url 'actividades:generador' as url_actividades_generador %}
     
     <!-- Cabecera -->
     <div class="container-fluid text-light p-5" id="cabecera">
@@ -48,10 +50,13 @@
                     <ul class="navbar-nav me-auto mb-0 pt-3 pt-sm-0">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link " href="">Actividades</a>
+                            <a class="nav-link {% if request.path == url_actividades_lista %}active{% endif %}" href="{{url_actividades_lista}}">Actividades</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == url_actividades_nueva %}active{% endif %}" href="{{url_actividades_nueva}}">Nueva actividad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_actividades_generador %}active{% endif %}" href="{{url_actividades_generador}}">Generador</a>
                         </li>
                         {% endif %}
                     </ul>
