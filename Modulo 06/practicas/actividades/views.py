@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse, FileResponse
 
 # Para el email
 from django.conf import settings
@@ -10,6 +11,10 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from pathlib import Path
 from email.mime.image import MIMEImage
+
+import lorem
+import datetime
+import random
 
 from .models import Actividad, Importancia, Estado
 
@@ -98,7 +103,7 @@ class Lista(LoginRequiredMixin, ListView):
     template_name = 'actividades/lista.html'
     # model = Actividad
     context_object_name = 'actividades'
-    paginate_by = 4
+    paginate_by = 3
     page_kwarg = 'pagina'
 
     def get_queryset(self):
@@ -128,13 +133,104 @@ class Lista(LoginRequiredMixin, ListView):
         return contexto
 
 
-class Generador(TemplateView):
+class Generador(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
     template_name = 'actividades/generador.html'
 
+    def post(self, request):
+        cantidad = int(request.POST.get('cantidad', 0))
+
+        # La fecha de inicio de cada actividad será un día aleatorio entre 'fecha_base' y 100 días después
+        fecha_base = datetime.date(year=2023, month=1, day=1)
+
+        et_importancia = Importancia.objects.all()
+        et_estado = Estado.objects.all()
+
+        for _ in range(cantidad):
+            actividad = Actividad()
+            actividad.titulo = lorem.sentence()
+            actividad.descripcion = lorem.paragraph()
+            # Fecha de inicio aleatorio entre 0 y 100 días después de la fecha base
+            actividad.fecha_inicio = fecha_base + datetime.timedelta(days=random.randint(0, 100))
+            # Fecha límite aleatorio entre 30 y 90 días después de la fecha de inicio
+            actividad.fecha_limite = actividad.fecha_inicio + datetime.timedelta(days=random.randint(30, 90))
+            # Asignamos la actividad al usario autenticado
+            actividad.usuario = request.user
+            # Importancia y estado aleatorio
+            actividad.importancia = et_importancia[random.randint(0, len(et_importancia) - 1)]
+            actividad.estado = et_estado[random.randint(0, len(et_estado) - 1)]
+            actividad.save()
+    
+        return redirect('actividades:lista')
 
 
-class Detalle(TemplateView):
+class Detalle(DetailView):
     template_name = 'actividades/detalle.html'
+    model = Actividad
+    # Cambiar el nombre a la variable de contexto
+    # context_object_name = 'instancia'
+    # Contexto extra
+    # extra_context = {}
+    # Especificar otro nombre de la variable que contiene el pk en la URL
+    # pk_url_kwarg = 'object_id'
+
+    def post(self, request, *args, **kwargs):
+        descargar = (request.POST['accion'] == 'descargar')
+
+        actividad = self.get_object()
+
+        buffer = self.generar_pdf(actividad)
+        
+        return FileResponse(buffer, as_attachment=descargar, filename='actividad.pdf')
+
+    def generar_pdf(self, actividad):
+        # Buffer de escritura
+        buffer = io.BytesIO()
+        # Canvas sobre el que escribiremos el PDF
+        pdf = canvas.Canvas(buffer, pagesize=pagesizes.letter)
+
+        # Linea actual de escritura de arriba a abajo
+        linea = 3
+        # Puntos de alto por cada linea
+        linea_puntos = 14
+        # Margen izquierdo desde donde se iniciará la escritura en cada linea
+        inicio_linea = 30
+        
+        # Escribimos el contenido de la actividad en el PDF
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, "Titulo:")
+        linea += 1
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, actividad.titulo)
+        linea += 2
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, "Descripción:")
+        linea += 1
+        # Para la descripción separaremos todo en lineas de 10 palabras
+        palabras = actividad.descripcion.split()
+        i = 0
+        while i < len(palabras):
+            pdf.drawString(inicio_linea, 780 - linea * linea_puntos, ' '.join(palabras[i:min(i + 10, len(palabras))]))
+            linea += 1
+            i += 10
+        linea += 1
+
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, f"Fecha de inicio: {actividad.fecha_inicio.strftime('%d/%m/%Y')}")
+        linea += 2
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, f"Fecha límite: {actividad.fecha_limite.strftime('%d/%m/%Y')}")
+        linea += 2
+
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, f"Importancia: {actividad.importancia}")
+        linea += 2
+        pdf.drawString(inicio_linea, 780 - linea * linea_puntos, f"Estado: {actividad.estado}")
+        linea += 2
+
+        # Volcamos el PDF en el buffer
+        pdf.showPage()
+        pdf.save()
+
+        # Posicionamos el cursero del buffer al inicio para que el FileResponse pueda usarlo
+        buffer.seek(0)
+
+        return buffer
+
 
 
 class Editar(TemplateView):
