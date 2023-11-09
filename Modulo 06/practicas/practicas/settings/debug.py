@@ -11,5 +11,7 @@ ENTORNO = 'Estoy en modo Debug'
 
 DEBUG = True
 
+ALLOWED_HOSTS = ['*']
+
 
 

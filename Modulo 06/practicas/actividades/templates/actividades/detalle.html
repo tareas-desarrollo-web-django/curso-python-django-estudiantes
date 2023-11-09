@@ -19,11 +19,27 @@
 
 
 <div class="container d-flex flex-wrap gap-3 py-5 justify-content-between">
+    <div>
+        <a class="btn btn-primary" href="{% url 'actividades:editar' actividad.id %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'actividades:eliminar' actividad.id %}">Eliminar</a>
+    </div>
+
     <form method="POST">
         {% csrf_token %}
         <button type="submit" class="btn btn-warning px-4" name="accion" value="descargar">Descargar PDF</button>
         <button type="submit" class="btn btn-warning px-4" name="accion" value="visualizar">Visualizar PDF</button>
     </form>
 </div>
+
+{% if confirmar_eliminar %}
+<div class="container gap-3 pb-5">
+    <form method="POST">
+        {% csrf_token %}
+        <p class="lead d-inline">Seguro que deseas eliminar?</p>
+        <button type="submit" class="btn btn-danger px-4 mx-4">Si</button>
+        <a class="btn btn-success px-4 mx-4" href="{% url 'actividades:detalle' actividad.id %}">No</a>
+    </form>
+</div>
+{% endif %}
 
 {% endblock %}

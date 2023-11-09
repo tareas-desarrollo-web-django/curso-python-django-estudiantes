@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, FileResponse
 
@@ -170,15 +170,20 @@ class Generador(LoginRequiredMixin, TemplateView):
         return redirect('actividades:lista')
 
 
-class Detalle(DetailView):
+class Detalle(LoginRequiredMixin, DetailView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
     template_name = 'actividades/detalle.html'
-    model = Actividad
+    # model = Actividad
     # Cambiar el nombre a la variable de contexto
     # context_object_name = 'instancia'
     # Contexto extra
     # extra_context = {}
     # Especificar otro nombre de la variable que contiene el pk en la URL
     # pk_url_kwarg = 'object_id'
+
+    def get_queryset(self):
+        actividades = Actividad.objects.filter(usuario=self.request.user)
+        return actividades
 
     def post(self, request, *args, **kwargs):
         descargar = (request.POST['accion'] == 'descargar')
@@ -238,15 +243,44 @@ class Detalle(DetailView):
         return buffer
 
 
+class Editar(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/nueva.html'
+    # model = Actividad
+    fields = ('titulo', 'descripcion', 'fecha_inicio', 'fecha_limite', 'importancia', 'estado')
+    success_url = reverse_lazy('actividades:lista')
 
-class Editar(TemplateView):
-    template_name = 'actividades/editar.html'
+    def get_queryset(self):
+        actividades = Actividad.objects.filter(usuario=self.request.user)
+        return actividades
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        fecha_iso = lambda f: f if isinstance(f, str) else f.isoformat()
+        context['form']['fecha_inicio'].value = lambda d=fecha_iso(context['form']['fecha_inicio'].value()): d
+        context['form']['fecha_limite'].value = lambda d=fecha_iso(context['form']['fecha_limite'].value()): d
+        
+        context.update({
+            'importancias': Importancia.objects.all(),
+            'estados': Estado.objects.all(),
+            'accion': 'Editar'
+        })
+
+        return context
 
 
-class Eliminar(TemplateView):
-    template_name = 'actividades/eliminar.html'
+class Eliminar(LoginRequiredMixin, DeleteView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/detalle.html'
+    # model = Actividad
+    success_url = reverse_lazy('actividades:lista')
 
+    extra_context = {'confirmar_eliminar':True}
 
+    def get_queryset(self):
+        actividades = Actividad.objects.filter(usuario=self.request.user)
+        return actividades
 
 
 

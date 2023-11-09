@@ -47,7 +47,7 @@
                     <select class="form-select" multiple id="et_importancia" name="importancia">
                         {% for importancia in importancias %}
                         <!-- El filtro |slugify convierte enteros a str y el filtro |add:"0" al inverso -->
-                        <option value="{{importancia.id}}" {% if form.importancia.value == importancia.id|slugify %}selected{% endif %}>{{importancia}}</option>
+                        <option value="{{importancia.id}}" {% if form.importancia.value|slugify == importancia.id|slugify %}selected{% endif %}>{{importancia}}</option>
                         {% endfor %}
                     </select>
                     {% for error in form.importancia.errors %}
@@ -60,7 +60,7 @@
                     <select class="form-select" multiple id="et_estado" name="estado">
                         {% for estado in estados %}
                         <!-- El filtro |slugify convierte enteros a str y el filtro |add:"0" al inverso -->
-                        <option value="{{estado.id}}" {% if form.estado.value == estado.id|slugify %}selected{% endif %}>{{estado}}</option>
+                        <option value="{{estado.id}}" {% if form.estado.value|slugify == estado.id|slugify %}selected{% endif %}>{{estado}}</option>
                         {% endfor %}
                     </select>
                     {% for error in form.estado.errors %}
