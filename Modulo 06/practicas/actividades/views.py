@@ -24,6 +24,10 @@ import io
 
 from .models import Actividad, Importancia, Estado
 
+# Para revisar los queries de django solo si estamos en modo DEBUG=True
+from django.db import connection
+connection.force_debug_cursor = True
+
 import pdb
 
 
@@ -152,6 +156,7 @@ class Generador(LoginRequiredMixin, TemplateView):
         et_importancia = Importancia.objects.all()
         et_estado = Estado.objects.all()
 
+        actividades = []
         for _ in range(cantidad):
             actividad = Actividad()
             actividad.titulo = lorem.sentence()
@@ -165,7 +170,12 @@ class Generador(LoginRequiredMixin, TemplateView):
             # Importancia y estado aleatorio
             actividad.importancia = et_importancia[random.randint(0, len(et_importancia) - 1)]
             actividad.estado = et_estado[random.randint(0, len(et_estado) - 1)]
+            
             actividad.save()
+            actividades.append(actividad)
+
+        # Actividad.objects.bulk_create(actividades)
+        print(connection.queries)
     
         return redirect('actividades:lista')
 
@@ -180,6 +190,14 @@ class Detalle(LoginRequiredMixin, DetailView):
     # extra_context = {}
     # Especificar otro nombre de la variable que contiene el pk en la URL
     # pk_url_kwarg = 'object_id'
+
+    def get(self, request, pk):
+        try:
+            actividad = self.get_object()
+        except:
+            return render(request, 'core/404.html')
+        
+        return super().get(request, pk)
 
     def get_queryset(self):
         actividades = Actividad.objects.filter(usuario=self.request.user)

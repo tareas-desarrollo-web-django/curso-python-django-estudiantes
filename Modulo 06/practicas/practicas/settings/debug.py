@@ -9,7 +9,7 @@ except ImportError:
 
 ENTORNO = 'Estoy en modo Debug'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
