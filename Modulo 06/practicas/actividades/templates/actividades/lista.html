@@ -15,8 +15,11 @@
                 <small>Hace {{actividad.registrada_desde}}</small>
             </div>
             <p class="mb-1">{{actividad.descripcion|slice:100}}...</p>
-            <a href="?ipk={{actividad.importancia.id}}"><small class="badge bg-secondary">{{actividad.importancia}}</small></a>
-            <a href="?epk={{actividad.estado.id}}"><small class="badge bg-secondary">{{actividad.estado}}</small></a>
+            <div class="d-flex w-100">
+                <button href="{% url 'actividades:editar' actividad.id %}" class="btn btn-link flex-grow-0 py-0 px-0"><small class="badge bg-secondary">{{actividad.importancia}}</small></button>
+                <button href="?epk={{actividad.estado.id}}" class="btn btn-link flex-grow-1 py-0 px-0"><small class="badge bg-secondary">{{actividad.estado}}</small></button>
+                <a href="{% url 'actividades:editar' actividad.id %}" class="flex-grow-0"><i class="fa-solid fa-pen-to-square"></i></a>
+            </div>
         </a>
     </div>
     {% endfor %}
