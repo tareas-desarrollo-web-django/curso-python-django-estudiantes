@@ -27,6 +27,9 @@ precios_productos = dict(Libreta=30.90, Libro=43.30, Plumones=80.40)
 # Agregar elementos (si la llave ya existe se remplaza el valor)
 # precios_productos['Borrador'] = 20.00
 
+# Eliminar elementos (si la llave no existe se recibirá una excepción `KeyError`)
+# del precios_productos['Libro']
+
 # Al iterar sobre un diccionario directamente, en realidad se está iterando 
 # sobre las llaves:
 # for x in precios_productos:
