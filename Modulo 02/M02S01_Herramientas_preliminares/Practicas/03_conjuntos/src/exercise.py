@@ -70,3 +70,36 @@ print(f"[1,2,3,4,5] están en [2,3,5]: {estan_todos(T, S)}")
 print(f"[1,2,3,4,5] están en [2,3,5]: {estan_todos_set(T, S)}")
 
 ##############################################################################
+r""" 
+Ejercicio para la clase
+
+Implementar una función que recibe una lista de pedidos, donde cada pedido es un
+diccionario de productos que mapea el nombre de un producto a la cantidad 
+solicitada del producto en el pedido, como a continuiación:
+[
+    {
+        "RAM":10, 
+        "SSD":2, 
+        "CPU":6,
+    },
+    {
+        "SSD":4,
+        "BOARD":2,
+    },
+    {
+        "CPU":7,
+        "FAN":1,
+        "VIDEO CARD":8,
+        "SSD":9,
+    }
+]
+La función debe devolver una lista con los nombres de los productos que aparecen
+en todos los pedidos, sin repeticiones.
+"""
+
+def productos_unicos(pedidos):
+    ...
+
+
+
+
