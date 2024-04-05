@@ -3,6 +3,19 @@ Ejemplos de prácticas
 """
 
 ##############################################################################
+# Construir diccionarios
+
+# Forma directa
+precios_productos = {'Libreta':30.90, 'Libro':43.30, 'Plumones':80.40, 'Carpetas':323.10}
+
+# Mediante parejas
+precios_productos = dict([('Libreta', 30.90), ('Libro', 43.30), ('Plumones', 80.40)])
+
+# Mediante argumentos con nombre
+precios_productos = dict(Libreta=30.90, Libro=43.30, Plumones=80.40)
+
+##############################################################################
+# Operar sobre diccionarios
 
 # Un diccionario de precios
 # precios_productos = {'Libreta':30.90, 'Libro':43.30, 'Plumones':80.40, 'Carpetas':323.10}
@@ -10,6 +23,9 @@ Ejemplos de prácticas
 # Podemos obtener un iterable con las puras llaves y otro con los puros valores
 # llaves = precios_productos.keys()
 # valores = precios_productos.values()
+
+# Agregar elementos (si la llave ya existe se remplaza el valor)
+# precios_productos['Borrador'] = 20.00
 
 # Al iterar sobre un diccionario directamente, en realidad se está iterando 
 # sobre las llaves:
