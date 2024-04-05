@@ -4,7 +4,7 @@ Tuplas
 Una `tupla` en Python es una estructura que sirve para almacenar una colección de datos de cualquier tipo, similar a una `lista`, pero con las siguientes características:
 * Es una estructura `inmutable`, es decir, que no se puede modificar ni agregarle elementos.
 * Se define usando paréntesis. Ejemplo `(1, "Libro", True)`.
-* Son útiles cuando queremos prevenir que alguna función modifique la colecciónde elementos.
+* Son útiles cuando queremos prevenir que alguna función modifique la colección de elementos.
 * Son más eficientes que las listas ya que al no poder cambiar, Python puede optimizar su rendimiento.
 * Se pueden usar como llaves de un diccionario, lo cual no es posible con listas.
 * Es manejada por la clase `tuple`.

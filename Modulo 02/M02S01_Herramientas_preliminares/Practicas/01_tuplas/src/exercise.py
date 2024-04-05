@@ -7,7 +7,7 @@ Ejemplos de prácticas
 # Una tupla de edades
 # edades = (43, 76, 12, 76, 12, 76)
 
-# No podemos modificar los elementos de la tupla, no dará un error
+# No podemos modificar los elementos de la tupla, nos dará un error
 # edades[0] = 10
 
 ##############################################################################
