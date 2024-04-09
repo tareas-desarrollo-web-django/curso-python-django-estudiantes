@@ -93,8 +93,8 @@ solicitada del producto en el pedido, como a continuiación:
         "SSD":9,
     }
 ]
-La función debe devolver una lista con los nombres de los productos que aparecen
-en todos los pedidos, sin repeticiones.
+La función debe devolver una lista con todos los nombres de los productos 
+que aparecen en todos los pedidos, sin repeticiones.
 """
 
 def productos_unicos(pedidos):

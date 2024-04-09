@@ -34,4 +34,32 @@ print(f"Cuadrados, impares y residuo 1 % 5 (ordenados): {sorted(conjunto_raro)}"
 tuplas_cartesianas_suma_6 = [p for p in tuplas_cartesianas if p[0] + p[1] == 3]
 print(f"Tuplas (0<=i<=4, 0<=j<=3) con i+j=6: {tuplas_cartesianas_suma_6}")
 
+##############################################################################
+
+# Añadir prefijos o sufijos
+columnas = ['promedio', 'varianza', 'desviacion', 'confianza_a', 'confianza_b']
+columnas_alumnos = [f"{c}_alumnos" for c in columns]
+columnas_maestros = [f"{c}_maestros" for c in columns]
+
+##############################################################################
+r""" 
+Ejercicio para la clase
+
+El módulo `os` sirve para realizar operaciones en el sistema operativo.
+Algunas de sus funciones son las siguientes:
+- `os.listdir(directorio)`: retorna la lista de archivos y carpetas en un directorio.
+- `os.path.isfile(ruta)`: retorna True si la ruta corresponde a un archivo y retorna
+  False si corresponde a un directorio.
+
+Elaborar una función que reciba un directorio y retorne una lista con todos
+los archivos que contiene, excluyendo los directorios. También recibe un 
+parámetro opcional `extension` que si el invocador manda una extensión, 
+entonces la función solo debe retornar los archivos que contengan dicha
+extensión (como 'pdf', 'csv', etc).
+"""
+
+import os
+def obtener_archivos(directorio, extension=None):
+    ...
+
 

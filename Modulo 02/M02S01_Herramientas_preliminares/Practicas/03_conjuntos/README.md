@@ -5,7 +5,7 @@ Los `conjuntos` en Python son una estructura para simular conjuntos
 matemáticos:
 * No almacenan duplicados
 * Sus elementos deben ser hashables como las llaves de un diccionario
-* Al igual que con las listas, sus elementos puedens ser de tipo mixto
+* Al igual que con las listas, sus elementos pueden ser de tipo mixto
 
 Entre las operaciones que soportan están:
 * Pertenencia: si un elemento está en un conjunto

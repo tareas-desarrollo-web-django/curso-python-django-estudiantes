@@ -1,10 +1,10 @@
 Iterables (listas, conjuntos, diccionarios, etc) por comprensión
 =================================================================
 
-Generar iterables por comprensión consiste usar un iterable base para generar otro iterable:
+Generar iterables por comprensión consiste en usar un iterable base para generar otro iterable:
 * La idea es tomar el iterable base para crear otro iterable, donde a cada elemento del iterable base se le aplicará una transformación a través de una expresión de Python.
 * El iterable resultante no tiene que ser del mismo tipo que el base, es decir, podemos crear una lista a partir de una tupla, o un diccionario a partir de una lista, etc.
-* Se le puede aplicar un filtro a la comprensión para solo quedarnos con los elementos que satisfagan las condiciones del filtro
+* Se le puede aplicar un filtro a la comprensión para solo quedarnos con los elementos que satisfagan las condiciones del filtro.
 
 Sintaxis:
 ---------

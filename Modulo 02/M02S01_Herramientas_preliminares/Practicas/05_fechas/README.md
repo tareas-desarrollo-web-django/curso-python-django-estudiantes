@@ -3,10 +3,10 @@ Fechas con `datetime` y `pytz`
 
 Python contiene integrada una librería llamada `datetime` para manipular fechas de manera muy sencilla:
 * Ya viene integrada en Python, no hay que instalarla.
-* Crear fechas a partir de texto.
-* Convertir fechas `datetime` a texto en el formato que queramos.
-* Sumar días, minutos, segundos, etc. a fechas
-* Calcular diferencias de tiempo entre fechas
+* Sirve para crear fechas a partir de texto.
+* Convierte fechas `datetime` a texto en el formato que queramos.
+* Sumar días, minutos, segundos, etc. a fechas.
+* Calcular diferencias de tiempo entre fechas.
 
 Por otro lado, la librería `pytz` es utilizada para manejar zonas horarias:
 * No viene instalada en Python, hay que instalarla: `pip install pytz`.

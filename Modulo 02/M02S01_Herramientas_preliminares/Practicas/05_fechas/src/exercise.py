@@ -17,9 +17,9 @@ hoy = datetime.combine(ahora, datetime.min.time())
 manana = hoy + timedelta(days=1)
 
 # Creamos un datetime con la fecha de navidad
-navidad = datetime.strptime("25/12/2022", "%d/%m/%Y")
-# Último día de agosto del 2022
-fin_agosto = datetime.strptime("01/09/2022", "%d/%m/%Y") - timedelta(days=1)
+navidad = datetime.strptime("25/12/2024", "%d/%m/%Y")
+# Último día de agosto del 2024
+fin_agosto = datetime.strptime("01/09/2024", "%d/%m/%Y") - timedelta(days=1)
 # Fecha inicializada con valores numéricos
 dia_independencia = datetime(year=2023, month=9, day=16)
 
@@ -30,9 +30,9 @@ dia_independencia = datetime(year=2023, month=9, day=16)
 dias_para_navidad = (navidad - hoy).days
 print(f"Días para navidad: {dias_para_navidad}")
 
-# Último día de agosto del 2022 en formato "dd/mm/aaaa"
+# Último día de agosto del 2024 en formato "dd/mm/aaaa"
 fin_agosto_texto = fin_agosto.strftime("%d/%m/%Y")
-print(f"Último día de agosto del 2022: {fin_agosto_texto}")
+print(f"Último día de agosto del 2024: {fin_agosto_texto}")
 
 # Revisar si una fecha está entre hoy y navidad
 print(f"Dia de Independencia entre hoy y navidad?: {hoy <= dia_independencia  <= navidad}")
@@ -79,7 +79,7 @@ def mes_dias(mes, anio):
 def primer_dia_del_mes(mes, anio, indice_dia):
     r"""
     Primer día semanal del mes/año dado. Por ejemplo, obtener la fecha del
-    primer Lunes del mes de Noviembre del 2022. El argumento `indice_dia` 
+    primer Lunes del mes de Noviembre del 2024. El argumento `indice_dia` 
     es el número de día de la semana en cuestión y representa 
     1=Lunes, ..., 7=Domingo.
     """
