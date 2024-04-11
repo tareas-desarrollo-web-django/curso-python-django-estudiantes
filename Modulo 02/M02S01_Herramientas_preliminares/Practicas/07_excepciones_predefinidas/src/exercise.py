@@ -12,9 +12,9 @@ def dividir_numeros(a, b):
 def sumar_numeros(a, b):
     r"""Suma los números 'a' y 'b'"""
     if not isinstance(a, float|int):
-        raise TypeError("a no es numérico")
+        raise TypeError("'a' tiene que ser numérico")
     if not isinstance(b, float|int):
-        raise TypeError("b no es numérico")
+        raise TypeError("'b' tiene que ser numérico")
     
     return a + b
 
@@ -22,7 +22,7 @@ def sumar_numeros(a, b):
 def fibonacci(n):
     r"""Calcula y retorna el n-ésimo número de la serie Fibonacci"""
     if n < 0:
-        raise ValueError("n es negativo")
+        raise ValueError("'n' no puede ser negativo")
     
     if n <= 1:
         return n
@@ -31,7 +31,7 @@ def fibonacci(n):
 
 
 ##############################################################################
-# Ciclo de divisiones sin manejar excepciones
+# Ciclo de sumas sin manejar excepciones
 # Le agregaremos un poco de manejo de excepciones
 
 salir = False
