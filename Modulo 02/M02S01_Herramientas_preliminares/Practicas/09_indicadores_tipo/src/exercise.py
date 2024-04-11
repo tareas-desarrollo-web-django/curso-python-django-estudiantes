@@ -30,5 +30,4 @@ def cargar_texto(ruta_archivo:str|None=None) -> str:
 def elevar(a:int, n:int=2):
     return a ** n
 
-def sumar(a, b=2, c=3, d=4, e=5):
-    return a + b + c + d + e
+
