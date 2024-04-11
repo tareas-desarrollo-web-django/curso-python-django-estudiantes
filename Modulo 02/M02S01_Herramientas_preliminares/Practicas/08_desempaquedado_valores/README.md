@@ -3,7 +3,7 @@ Desempaquetado de valores y de parámetros
 
 Python tiene un mecanismo que simplifica el manejo de valores contenidos en una lista o tupla, llamado `desempaquetado de valores`:
 * Consiste en separar los valores de un iterable en diferentes variables.
-* Soporta un bune nivel de generalización.
+* Otorga un buen nivel de generalización.
 * Es muy útil tanto para nombrar los valores de un iterable, como para enviar parámetros a las funciones.
 * Para el caso de los parámetros, también tiene soporte para diccionarios.
 
