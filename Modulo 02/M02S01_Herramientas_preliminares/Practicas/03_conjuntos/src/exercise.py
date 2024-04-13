@@ -94,9 +94,27 @@ solicitada del producto en el pedido, como a continuiación:
     }
 ]
 La función debe devolver una lista con todos los nombres de los productos 
-que aparecen en todos los pedidos, sin repeticiones.
+que aparecen en todos los pedidos, sin repeticiones. De acuerdo al ejemplo, 
+debe retornar ['RAM', 'SSD', 'CPU', 'BOARD', 'FAN', 'VIDEO CARD'], quizás en
+diferente orden.
 """
-
+pedidos = [
+    {
+        "RAM":10, 
+        "SSD":2, 
+        "CPU":6,
+    },
+    {
+        "SSD":4,
+        "BOARD":2,
+    },
+    {
+        "CPU":7,
+        "FAN":1,
+        "VIDEO CARD":8,
+        "SSD":9,
+    }
+]
 def productos_unicos(pedidos):
     ...
 

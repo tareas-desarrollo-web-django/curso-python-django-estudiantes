@@ -31,8 +31,11 @@ def fibonacci(n):
 
 
 ##############################################################################
-# Ciclo de sumas sin manejar excepciones
-# Le agregaremos un poco de manejo de excepciones
+# - Ciclo de sumas sin manejar excepciones. El programa terminará con error
+# al proveer texto en lugar de número.
+# - Le agregaremos un poco de manejo de excepciones, para que el programa no
+# termine cuando ocurra un error al convertir a enteros los valores dados
+# por el usuario.
 
 salir = False
 while not salir:

@@ -47,9 +47,12 @@ Ejercicio para la clase
 
 El módulo `os` sirve para realizar operaciones en el sistema operativo.
 Algunas de sus funciones son las siguientes:
-- `os.listdir(directorio)`: retorna la lista de archivos y carpetas en un directorio.
-- `os.path.isfile(ruta)`: retorna True si la ruta corresponde a un archivo y retorna
-  False si corresponde a un directorio.
+- `os.listdir(directorio)`: retorna la lista de archivos y carpetas en un 
+  directorio.
+- `os.path.isfile(ruta)`: retorna True si la ruta corresponde a un archivo y 
+  retorna False si corresponde a un directorio.
+- `os.path.join(ruta, complemento)`, agrega el complemento a la ruta, para 
+  formar una ruta más grande.
 
 Elaborar una función que reciba un directorio y retorne una lista con todos
 los archivos que contiene, excluyendo los directorios. También recibe un 

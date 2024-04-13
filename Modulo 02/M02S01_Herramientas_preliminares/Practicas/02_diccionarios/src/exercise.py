@@ -127,10 +127,9 @@ Ejercicio para la clase
 Usando el mismo objeto 'respuesta' definido anteriormente, implementa una 
 función que:
 - Reciba: dicho objeto 'respuesta'.
-- Devuelva: un diccionario que contenga los usuarios que realizaron pedidos
-  y cuantos pedidos realizó cada usuario. Las llaves del diccionario deben 
-  ser los IDs de los usuarios y los valores deben ser el número de pedidos.
-  Solo debe contener los usuarios que aparecen en los pedidos.
+- Devuelva: un diccionario que mapea los ids de usuarios que realizaron pedidos
+  a cuantos pedidos realizó cada usuario. Solo debe contener los usuarios que 
+  aparecen en los pedidos.
 """
 
 def pedidos_usuarios(respuesta):
@@ -143,9 +142,8 @@ Ejercicio para la clase
 Usando el mismo objeto 'respuesta' definido anteriormente, implementa una 
 función que:
 - Reciba: dicho objeto 'respuesta'.
-- Devuelva: un diccionario que contenga cuanto se pidió de cada producto 
-  tomando en cuenta todos los pedidos. Las llaves del diccionario deben 
-  ser los nombres de los productos y los valores deben ser las cantidades.
+- Devuelva: un diccionario que mapea los nombres de los productos a la cantidad
+  que se pidió del producto tomando en cuenta todos los pedidos.
   Solo debe contener los productos que aparecen en los pedidos.
 """
 

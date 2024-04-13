@@ -56,27 +56,23 @@ guardar_matriz(matriz, ruta_carpeta + "\\matriz_2.csv")
 # Hay funciones que para generalizar su aplicación, esperan como parámetro
 # una o más funciones, aquí suele usarse mucho las expresiones lambda.
 
-# Funciones de ordenamiento predefinidas en Python
+# Función de ordenamiento predefinidas en Python: `sorted`
+palabras = ['sit', 'non', 'eius', 'aliquam', 'amet', 'quiquia', 'modi', 'dolorem', 'dolore', 'etincidunt']
 
-coordenadas = [(2, 6), (9, 10), (2, 3), (4, 9), (8, 7), (8, 4), (10, 1), (2, 7)]
-# Podemos ordenadar las coordenadas. Por defecto, las tuplas se ordenadn 
-# primero respecto al primer elemento, luego respecto al segundo, etc. 
-sorted(coordenadas)
-# Podemos ordenarlas en orden inverso usando el argumento 'reverse'
-# pero esta limitado a solo invertir el orden de la lista
-sorted(coordenadas, reverse=True)
-# Otra forma de ordenar en orden inverso es usar el argumento 'key', que es más
-# general y nos permite tener control total respecto al orden de los elementos.
-# Este argumento espera una función, y es aquí donde podemos hacer uso de las
-# expresiones 'lambda', si no requerimos de algo muy sofisticado.
-sorted(coordenadas, key=lambda x: (-x[0], -x[1]))
-# Podemos or ejemplo en su lugar ordenar de mayor a menor por la primera 
-# entrada pero de menor a mayor por la segunda coordenada.
-sorted(coordenadas, key=lambda x: (-x[0], x[1]))
-# O podemos ordenar como prioridad por la segunda coordenada
-sorted(coordenadas, key=lambda x: (x[1], x[0]))
-# O podemos solamente ordenar tomando en cuenta la primera coordenada
-sorted(coordenadas, key=lambda x: x[0])
+# Ordenamos directamente usando las palabras como llave de ordenamiento (orden lexicográfico)
+sorted(palabras)
+# Igual pero en orden inverso
+sorted(palabras, reverse=True)
+# Ordenamos en orden lexicográfico pero de derecha a izquiera
+sorted(palabras, key=lambda x: x[::-1])
+# NOTA: Ahora usamos el atributo `key` para asociar un objeto a cada palabra que será usado para ordenar
+# Ordenamos por el tamaño de las palabras
+sorted(palabras, key=lambda x: len(x))
+# Ordenamos por tamaño de palabras pero en descendente, para lo cual tenemos dos opciones
+sorted(palabras, key=lambda x: len(x), reverse=True)
+sorted(palabras, key=lambda x: -len(x))
+
+
 
 
 
