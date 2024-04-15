@@ -39,8 +39,10 @@ print(f"Dia de Independencia entre hoy y navidad?: {hoy <= dia_independencia  <=
 
 ##############################################################################
 # Zonas horarias
+# Podemos ver la lista de Códigos IANA en: https://timeapi.io/documentation/iana-timezones
+# Podemos consultar la lista soportada por `pytz` con: `pytz.all_timezones`
 
-
+# Para crear un objeto de zona horaria tenemos que usar su código IANA
 tz_cdmx = timezone('America/Mexico_City')
 tz_madrid = timezone('Europe/Madrid')
 
@@ -53,28 +55,21 @@ ahora_en_madrid = ahora_en_mexico.astimezone(tz_madrid)
 print(ahora_en_madrid.strftime('%Y-%m-%d %H:%M:%S'))
 
 ##############################################################################
+# Podemos obtener el código de la zona horaria local
+
+from tzlocal import get_localzone
+
+# Obtenemos el código IANA de la zona local
+codigo_local = get_localzone().key
+tz_local = timezone(codigo_local)
+
+# Obtenemos la fecha y hora y le asignamos la zona horaria local
+local_time = tz_local.localize(datetime.now())
+# O de forma más directa, el parámetro 'tz' no es soportado por `datetime` ni `datetime.strptime`
+local_time = datetime.now(tz=tz_local)
+
+##############################################################################
 # Ejemplos de uso
-
-def mes_dias(mes, anio):
-    r"""
-    Devuelve cuantos días tiene un mes dado.
-
-    Args:
-        mes (int): número de mes, 1=Enero, 12=Diciembre
-        anio (int): numéro de año
-    """
-    # Obtenemos el año/mes resultante de movernos un mes adelante
-    # Remplazamos los originales porque ya no los necesitaremos
-    anio += mes // 12
-    mes = (mes % 12) + 1
-
-    # Generamos una fecha con el primer día del siguiente mes
-    primer_dia_sig_mes = datetime(year=anio, month=mes, day=1)
-
-    # Restamos un día para quedar en el último día del mes original
-    # y devolvemos el número de día correspondiente
-    return (primer_dia_sig_mes - timedelta(days=1)).day
-
 
 def primer_dia_del_mes(mes, anio, indice_dia):
     r"""
