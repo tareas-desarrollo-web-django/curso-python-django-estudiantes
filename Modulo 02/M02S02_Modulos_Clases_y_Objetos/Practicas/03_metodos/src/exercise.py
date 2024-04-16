@@ -48,12 +48,13 @@ taxi = Auto("Taxi", "Amarillo", 150)
 r"""
 Ejercicio para realizar en clase
 - Generar una clase llamada 'Tabla' que menje una tabla desde un csv
-- La clase debe recibir en el constructor una ruta del archivo csv y 
-  automáticamente cargar la tabla, la tabla se espera que tenga una cabecera
-  y el contenido debe ser de valores enteros.
-- Debe tener un método para guardar el contenido de la tabla de vuelta al
-  archivo.
-- Implementar un método para sumarle una constante a toda la tabla.
+- La clase debe recibir en el constructor un paráemtro `ruta` con la ruta del 
+  archivo csv y automáticamente cargar la tabla, la tabla se espera que tenga 
+  una cabecera y el contenido de valores enteros.
+- Debe tener un método `guardar(ruta:str)` para guardar el contenido de la 
+  tabla de vuelta al archivo.
+- Implementar un método `sumar(k:int)` para sumarle una constante a toda la 
+  tabla.
 """
 
 

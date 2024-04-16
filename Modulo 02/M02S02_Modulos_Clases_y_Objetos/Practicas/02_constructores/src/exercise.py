@@ -15,7 +15,7 @@ class Auto:
         print(f"Se ha construido un auto con nombre {self.nombre}\n")
 
 # Generamos dos instancias de la clase Auto
-# Necesitamos pasar el nombre como parámetro
+# El único parámetro obligatorio es el nombre
 taxi = Auto("Taxi", 4, "Rojo", 150)
 deportivo = Auto("Deportivo", 4, "Rojo", 400)
 
