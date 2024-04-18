@@ -104,3 +104,83 @@ del taxi.llantas
 print(f"Antes de eliminar llantas de taxe: {taxi.llantas = }")
 
 ##############################################################################
+
+
+
+class TablaActivity:
+    r""" Tabla para almacenar registros de actividades """
+    # Nombre de la tabla
+    table_name = 'activity'
+    # Columnas de la tabla
+    columns = {
+        'id': {
+            'attributes': 'INTEGER PRIMARY KEY',
+        },
+        # The start time of the period reported in the activity
+        'start_time': {
+            'attributes':'TIMESTAMP NOT NULL',
+        },
+        # The activity that needs to be sent to the server
+        'activity': {
+            'attributes': 'TEXT NOT NULL',
+        },
+    }
+
+    def __init__(self, file_path):
+        self.file_path = file_path
+    
+    def crear_tabla(self):
+        r""" 
+        Genera el código SQLite para crear la tabla
+        """
+        # Definiciones de columnas
+        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columns.items()])
+        # Instrucción para generar los posibles primary keys
+        pk_cols = [c for c,p in self.columns.items() if 'pk' in p and p['pk']]
+        primary_keys = f", PRIMARY KEY ({', '.join(pk_cols)})" if pk_cols else ''
+
+        sentencia = f"CREATE TABLE IF NOT EXISTS {self.table_name} ({columnas_definitiones}{primary_keys})"
+        
+        print(sentencia)
+
+
+class TablaUser:
+    r"""
+    Table for storing information about local apps, since the path is
+    involved, then this table is specific for the PC in use.
+    """
+    # Nombre de la tabla
+    table_name = 'user'
+    columns = {
+        # Path to the directory of the app
+        'name': {
+            'pk': True,
+            'attributes': 'TEXT',
+        },
+        # Name with extenssion of the app
+        'lastname': {
+            'pk': True,
+            'attributes': 'TEXT',
+        },
+        # Action performed in the app (like 'untracked')
+        'role': {
+            'attributes': 'TEXT',
+        },
+    }
+
+    def __init__(self, file_path):
+        self.file_path = file_path
+    
+    def crear_tabla(self):
+        r""" 
+        Genera el código SQLite para crear la tabla
+        """
+        # Definiciones de columnas
+        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columns.items()])
+        # Instrucción para generar los posibles primary keys
+        pk_cols = [c for c,p in self.columns.items() if 'pk' in p and p['pk']]
+        primary_keys = f", PRIMARY KEY ({', '.join(pk_cols)})" if pk_cols else ''
+
+        sentencia = f"CREATE TABLE IF NOT EXISTS {self.table_name} ({columnas_definitiones}{primary_keys})"
+        
+        print(sentencia)

@@ -55,6 +55,12 @@ Ejercicio para realizar en clase
   tabla de vuelta al archivo.
 - Implementar un método `sumar(k:int)` para sumarle una constante a toda la 
   tabla.
+Variantes:
+- Que en el constructor se reciban los parámetros opcionales `n:int`,
+  `m:int`, `v:float`, si el archivo no existe entonces que se genere con una 
+  matriz de tamaño `n`x`m` inicializada en el valor `v`.
+- Que el método `sumar` acepte otra matriz de la misma clase y que se le sume 
+  a la actual.
 """
 
 
