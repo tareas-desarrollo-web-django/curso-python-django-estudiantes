@@ -71,7 +71,6 @@ print(f"{deportivo.color=}, {deportivo.llantas=}, {deportivo.vel_max_kmh=}")
 print(f"{bus.color=}, {bus.llantas=}, {bus.vel_max_kmh=}\n")
 
 # Modificamos los atributos desde el objeto 'deportivo'
-# Esto en realidad genera atributos de instancia para el objeto 'deportivo'
 print("*" * 40)
 deportivo.color = "Naranja"
 deportivo.vel_max_kmh = 400
