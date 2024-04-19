@@ -2,7 +2,7 @@
 from copy import deepcopy
 
 ##############################################################################
-# # Ejemplo
+# Ejemplo
 # print("*" * 40)
 
 # # Tenemos una lista de componentes y asignamos una "copia"
@@ -28,10 +28,10 @@ from copy import deepcopy
 # print(x)
 # print(y, "\n")
 
-# En todos los casos, lo que hacíamos en una variable también aplicaba a la otra
+# # En todos los casos, lo que hacíamos en una variable también aplicaba a la otra
 
 ##############################################################################
-# # Ejemplo
+# Ejemplo
 # print("*" * 40)
 
 # # Supongamos que tenemos una lista de precios y queremos trabajar sobre una
@@ -56,11 +56,10 @@ from copy import deepcopy
 ### Como corregir esto?
 
 # ##############################################################################
-# # Ejemplo: similar al ejemplo anterior, pero ahora mediante una función
+# Ejemplo: similar al ejemplo anterior, pero ahora mediante una función
 # print("*" * 40)
 
 # def sumar_descuentos(lista_precios):
-#     lista_precios = deepcopy(lista_precios)
 #     # A cada precio en la lista copia le descontamos el 20%
 #     for i in range(len(lista_precios)):
 #         lista_precios[i] *= 0.8
@@ -82,40 +81,56 @@ from copy import deepcopy
 ### Como corregir esto?
 
 # ##############################################################################
-# Ejemplo 
-print("*" * 40)
+# # Ejemplo 
 
-# Función que busca mensajes de error en una lista de 'mensajes'
-# Opcionalmente recibe una lista de errores ya encontrados
-def encontrar_errores(mensajes, errores=None):
-    if errores is None:
-        errores = []
-    for m in mensajes:
-        if m.strip().lower().startswith("error"):
-            errores.append(m)
+# print("*" * 40)
+
+# # Función que busca mensajes de error en una lista de 'mensajes'
+# # Opcionalmente recibe una lista de errores ya encontrados
+# def encontrar_errores(mensajes, errores=[]):
+#     for m in mensajes:
+#         if m.strip().lower().startswith("error"):
+#             errores.append(m)
     
-    return errores
+#     return errores
 
-# Lista de operaciones realizadas
-operaciones = ["venta realizada", "error de sistema", "integracion de productos"]
-# Asumimos que no tenemos erorres por lo que no enviamos segundo argumento
-mensajes_error = encontrar_errores(operaciones)
-print(f"Erores: {mensajes_error}")
+# # Lista de operaciones realizadas
+# operaciones = ["venta realizada", "error de sistema", "integracion de productos"]
+# # Asumimos que no tenemos erorres por lo que no enviamos segundo argumento
+# mensajes_error = encontrar_errores(operaciones)
+# print(f"Erores: {mensajes_error}")
 
-# Nueva lista de operaciones realizadas
-operaciones = ["error de terminal", "venta realizada", "pago realizado"]
-# Como ya tenemos errores no procesados, los mandamos
-mensajes_error = encontrar_errores(operaciones, mensajes_error)
-print(f"Erores: {mensajes_error}")
+# # Nueva lista de operaciones realizadas
+# operaciones = ["error de terminal", "venta realizada", "pago realizado"]
+# # Como ya tenemos errores no procesados, los mandamos
+# mensajes_error = encontrar_errores(operaciones, mensajes_error)
+# print(f"Erores: {mensajes_error}")
 
-# Nueva lista de operaciones realizadas
-operaciones = ["pago realizado", "venta realizada", "pago rechazado"]
-# Asumimos que ya hemos procesado los erroes y por lo tanto no enviamos
-# segundo argumento
-mensajes_error = encontrar_errores(operaciones)
-print(f"Erores: {mensajes_error}")
+# # Nueva lista de operaciones realizadas
+# operaciones = ["pago realizado", "venta realizada", "pago rechazado"]
+# # Asumimos que ya hemos procesado los erroes y por lo tanto no enviamos
+# # segundo argumento
+# mensajes_error = encontrar_errores(operaciones)
+# print(f"Erores: {mensajes_error}")
 
 ### Como corregir esto?
 
-# ##############################################################################
+################################################################################
 
+
+# Algo mucho más básico
+
+# Hemos visto que podemos replicar un número en una lista
+numeros = [5] * 4
+
+# Estaríamos tentados a hacer algo similar si quisiéramos inicializar una lista de listas vacías
+filas = [[]] * 5
+print(filas)
+
+# El problema es que en realidad la multiplicación lo que hace es replicar la referencia, no el objeto
+filas[0].append(3)
+print(filas)
+
+### Como corregir esto?
+
+################################################################################
