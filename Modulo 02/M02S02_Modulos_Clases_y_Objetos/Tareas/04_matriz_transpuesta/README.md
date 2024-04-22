@@ -26,6 +26,7 @@ En el archivo `src\exercise.py` implementar una clase llamada `Matriz`:
         * `ValueError`: si la matriz no es pareja, es decir, que el tamaño de sus filas no sea igual para todas. Pueden poner el mensaje que quieran.
 * La clase debe contener un método con firma `transpuesta(self)`.
     * Debe retornar la transpuesta de la matriz dada en el constructor, también como una tupla de tuplas.
+    * Pista: considera la función predefinida `zip`.
 
 
 Validaciones

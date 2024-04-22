@@ -2,61 +2,56 @@
 Funciones predefinidas
 '''
 
-##############################################################################
-# Definiciones
 
-class Auto:
-    def __init__(self, nombre:str, color:str, vel_max_kmh:int):
-        self.nombre = nombre
-        self.color = color
-        self.vel_max_kmh = vel_max_kmh
-        self.vel_actual = 0
+##############################################################################
+# # Ejemplo
+# print("*" * 40)
+
+# numeros = [1, 2, 5, 6, 8, -1]
+# son_positivos = all([n >= 0 for n in numeros])
+# print(f"Números: {numeros}")
+# print(f"Todos son positivos? {son_positivos}")
+
+# numeros = [1, 2, 5, 6, 8, 1]
+# son_positivos = all([n >= 0 for n in numeros])
+# print(f"Números: {numeros}")
+# print(f"Todos son positivos? {son_positivos}")
+
+# ##############################################################################
+# # Ejemplo
+# print("*" * 40)
+
+# numeros = [1, 2, 5, 6, 8, -1]
+# alguno_negativo = any([n < 0 for n in numeros])
+# print(f"Números: {numeros}")
+# print(f"Alguno es negativo? {alguno_negativo}")
+
+# numeros = [1, 2, 5, 6, 8, 1]
+# alguno_negativo = any([n < 0 for n in numeros])
+# print(f"Números: {numeros}")
+# print(f"Alguno es negativo? {alguno_negativo}")
+
+# ##############################################################################
+# # Ejemplo
+# print("*" * 40)
+
+# class Auto:
+#     def __init__(self, nombre:str, color:str, vel_max_kmh:int):
+#         self.nombre = nombre
+#         self.color = color
+#         self.vel_max_kmh = vel_max_kmh
+#         self.vel_actual = 0
     
-    def arrancar(self, vel:int):
-        if vel > self.vel_max_kmh:
-            raise ValueError(f"No se puede superar la velocidad máxima de {self.vel_max_kmh} km/h")
+#     def arrancar(self, vel:int):
+#         if vel > self.vel_max_kmh:
+#             raise ValueError(f"No se puede superar la velocidad máxima de {self.vel_max_kmh} km/h")
         
-        print(f"Arrancando el auto a {vel} km/h")
-        self.vel_actual = vel
+#         print(f"Arrancando el auto a {vel} km/h")
+#         self.vel_actual = vel
     
-    def frenar(self):
-        print(f"Frenando el auto")
-        self.vel_actual = 0
-
-
-
-
-##############################################################################
-# # Ejemplo
-# print("*" * 40)
-
-# numeros = [1, 2, 5, 6, 8, -1]
-# son_positivos = all([n >= 0 for n in numeros])
-# print(f"Números: {numeros}")
-# print(f"Todos son positivos? {son_positivos}")
-
-# numeros = [1, 2, 5, 6, 8, 1]
-# son_positivos = all([n >= 0 for n in numeros])
-# print(f"Números: {numeros}")
-# print(f"Todos son positivos? {son_positivos}")
-
-# ##############################################################################
-# # Ejemplo
-# print("*" * 40)
-
-# numeros = [1, 2, 5, 6, 8, -1]
-# alguno_negativo = any([n < 0 for n in numeros])
-# print(f"Números: {numeros}")
-# print(f"Alguno es negativo? {alguno_negativo}")
-
-# numeros = [1, 2, 5, 6, 8, 1]
-# alguno_negativo = any([n < 0 for n in numeros])
-# print(f"Números: {numeros}")
-# print(f"Alguno es negativo? {alguno_negativo}")
-
-# ##############################################################################
-# # Ejemplo
-# print("*" * 40)
+#     def frenar(self):
+#         print(f"Frenando el auto")
+#         self.vel_actual = 0
 
 # def sumar_numeros(a, b):
 #     return a + b
@@ -66,7 +61,7 @@ class Auto:
 # print(f"Auto es invocable? {callable(Auto)}")
 # print(f"taxi es invocable? {callable(taxi)}")
 
-# ##############################################################################
+# ######################################
 # # Ejemplo
 # print("*" * 40)
 
@@ -80,7 +75,7 @@ class Auto:
 # # También podemos invocar sus funciones
 # getattr(bus, "arrancar")(100)
 
-# ##############################################################################
+# ######################################
 # # Ejemplo
 # print("*" * 40)
 
