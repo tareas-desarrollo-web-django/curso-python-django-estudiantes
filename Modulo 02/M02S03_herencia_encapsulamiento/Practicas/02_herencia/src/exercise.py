@@ -65,8 +65,43 @@
 # labrador.hablar()
 # print(vars(labrador))
 
+
 ##############################################################################
-# Ejemplo
+# Composición sobre herencia
+
+# class Domicilio:
+#     def __init__(self, calle, numero, colonia):
+#         self.calle = calle
+#         self.numero = numero
+#         self.colonia = colonia
+    
+#     def calcular_coordenadas(self):
+#         print("Calculando coordenadas en base al domicilio")
+
+# class Salarios:
+#     def __init__(self, nombre_empleado):
+#         self.nombre_empleado = nombre_empleado
+#         self.sueldo_base = None
+#         self.aguinaldo = None
+#         self.cargar_datos()
+    
+#     def cargar_datos(self):
+#         print(f"Cargando salarios de {self.nombre_empleado} de la base de datos")
+
+# class Empleado:
+#     def __init__(self, nombre_empleado):
+#         self.domicilio = Domicilio("Benito Juarez", 324, "Bellavista")
+#         self.salarios = Salarios(nombre_empleado)
+#         self.edad = 24
+#         self.estudios = "ingenirería"
+#         self.sexo = "hombre"
+    
+#     def programar_recoleccion(self):
+#         coordenadas = self.domicilio.calcular_coordenadas()
+#         print("Empleado listado en la ruta")
+
+##############################################################################
+# Herencia múltiple
 
 # class Perro:
 #     def __init__(self, color):
@@ -128,41 +163,7 @@
 
 
 ##############################################################################
-
-
-# class Domicilio:
-#     def __init__(self, calle, numero, colonia):
-#         self.calle = calle
-#         self.numero = numero
-#         self.colonia = colonia
-    
-#     def calcular_coordenadas(self):
-#         print("Calculando coordenadas en base al domicilio")
-
-# class Salarios:
-#     def __init__(self, nombre_empleado):
-#         self.nombre_empleado = nombre_empleado
-#         self.sueldo_base = None
-#         self.aguinaldo = None
-#         self.cargar_datos()
-    
-#     def cargar_datos(self):
-#         print(f"Cargando salarios de {self.nombre_empleado} de la base de datos")
-
-# class Empleado:
-#     def __init__(self, nombre_empleado):
-#         self.domicilio = Domicilio("Benito Juarez", 324, "Bellavista")
-#         self.salarios = Salarios(nombre_empleado)
-#         self.edad = 24
-#         self.estudios = "ingenirería"
-#         self.sexo = "hombre"
-    
-#     def programar_recoleccion(self):
-#         coordenadas = self.domicilio.calcular_coordenadas()
-#         print("Empleado listado en la ruta")
-
-##############################################################################
-# Ejemplo
+# Herencia multinivel
 
 # class Animal:
 #     def __init__(self, color, patas, ojos):
