@@ -8,15 +8,15 @@ class Matriz2x2:
             raise ValueError("La matriz no es de 2x2")
 
         self.matriz = deepcopy(M)
-        self.filas = len(M)
-        self.columnas = len(M[0])
+        self.num_filas = len(M)
+        self.num_columnas = len(M[0])
     
     def sumar(self, M2):
         if isinstance(M2, self.__class__):
             M2 = M2.matriz
         
-        for i in range(self.filas):
-            for j in range(self.columnas):
+        for i in range(self.num_filas):
+            for j in range(self.num_columnas):
                 self.matriz[i][j] += M2[i][j]
     
     def print(self, prefijo):
