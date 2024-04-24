@@ -109,36 +109,36 @@ print(f"Antes de eliminar llantas de taxe: {taxi.llantas = }")
 class TablaActivity:
     r""" Tabla para almacenar registros de actividades """
     # Nombre de la tabla
-    table_name = 'activity'
+    nombre_tabla = 'activity'
     # Columnas de la tabla
-    columns = {
+    columnas = {
         'id': {
             'attributes': 'INTEGER PRIMARY KEY',
         },
-        # The start time of the period reported in the activity
+        # Tiempo de inicio del reporte
         'start_time': {
             'attributes':'TIMESTAMP NOT NULL',
         },
-        # The activity that needs to be sent to the server
+        # Descripción de la actividad
         'activity': {
             'attributes': 'TEXT NOT NULL',
         },
     }
 
-    def __init__(self, file_path):
-        self.file_path = file_path
+    def __init__(self, ruta_archivo):
+        self.ruta_archivo = ruta_archivo
     
     def crear_tabla(self):
         r""" 
         Genera el código SQLite para crear la tabla
         """
         # Definiciones de columnas
-        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columns.items()])
+        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columnas.items()])
         # Instrucción para generar los posibles primary keys
-        pk_cols = [c for c,p in self.columns.items() if 'pk' in p and p['pk']]
+        pk_cols = [c for c,p in self.columnas.items() if 'pk' in p and p['pk']]
         primary_keys = f", PRIMARY KEY ({', '.join(pk_cols)})" if pk_cols else ''
 
-        sentencia = f"CREATE TABLE IF NOT EXISTS {self.table_name} ({columnas_definitiones}{primary_keys})"
+        sentencia = f"CREATE TABLE IF NOT EXISTS {self.nombre_tabla} ({columnas_definitiones}{primary_keys})"
         
         print(sentencia)
 
@@ -149,37 +149,37 @@ class TablaUser:
     involved, then this table is specific for the PC in use.
     """
     # Nombre de la tabla
-    table_name = 'user'
-    columns = {
-        # Path to the directory of the app
+    nombre_tabla = 'user'
+    columnas = {
+        # Nombre del usuario, será usado como parte del primary key
         'name': {
             'pk': True,
             'attributes': 'TEXT',
         },
-        # Name with extenssion of the app
+        # Apellido del usuario, será usado como parte del primary key
         'lastname': {
             'pk': True,
             'attributes': 'TEXT',
         },
-        # Action performed in the app (like 'untracked')
+        # Role del usuario
         'role': {
             'attributes': 'TEXT',
         },
     }
 
-    def __init__(self, file_path):
-        self.file_path = file_path
+    def __init__(self, ruta_archivo):
+        self.ruta_archivo = ruta_archivo
     
     def crear_tabla(self):
         r""" 
         Genera el código SQLite para crear la tabla
         """
         # Definiciones de columnas
-        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columns.items()])
+        columnas_definitiones = ', '.join([f"{c} {p['attributes']}" for c,p in self.columnas.items()])
         # Instrucción para generar los posibles primary keys
-        pk_cols = [c for c,p in self.columns.items() if 'pk' in p and p['pk']]
+        pk_cols = [c for c,p in self.columnas.items() if 'pk' in p and p['pk']]
         primary_keys = f", PRIMARY KEY ({', '.join(pk_cols)})" if pk_cols else ''
 
-        sentencia = f"CREATE TABLE IF NOT EXISTS {self.table_name} ({columnas_definitiones}{primary_keys})"
+        sentencia = f"CREATE TABLE IF NOT EXISTS {self.nombre_tabla} ({columnas_definitiones}{primary_keys})"
         
         print(sentencia)
