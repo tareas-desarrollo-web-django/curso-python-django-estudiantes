@@ -1,0 +1,25 @@
+Población total, indicadores socioeconómicos, índice y grado de marginación por localidad, 2020	
+Descargado de: https://www.gob.mx/conapo/documentos/indices-de-marginacion-2020-284372 desde el apartado Índice de marginación por localidad 2020 -> Base de datos
+Y procesado manualmente para unir las hojas 'IML_2020_AGS-MEX' y 'IML_2020_MICH-ZAC' en una sola formando un archivo CSV con toda la información.
+Además la descripción encontrada en la hoja 'Diccionario' es la siguiente:
+
+Variable	Descripción
+CVE_LOC		Clave geográfica
+ENT		Clave de la entidad federativa
+NOM_ENT		Nombre de la entidad federativa
+MUN		Clave del municipio
+NOM_MUN		Nombre del municipio
+LOC		Clave de la localidad
+NOM_LOC		Nombre de la localidad
+POB_TOT		Población total
+ANALF		Porcentaje de población de 15 años o más analfabeta
+SBASC		Porcentaje de población de 15 años o más sin educación básica
+OVSDE		Porcentaje de ocupantes en viviendas particulares habitadas sin drenaje ni excusado
+OVSEE		Porcentaje de ocupantes en viviendas particulares habitadas sin energía eléctrica
+OVSAE		Porcentaje de ocupantes en viviendas particulares habitadas sin agua entubada
+OVPT		Porcentaje de ocupantes en viviendas particulares habitadas con piso de tierra
+OVHAC		Porcentaje de ocupantes en viviendas particulares habitadas con hacinamiento
+OVSREF		Porcentaje de ocupantes en viviendas particulares habitadas sin refrigerador
+IM_2020		Índice de marginación a nivel localidad, 2020
+GM_2020		Grado de marginación a nivel localidad, 2020
+IMN_2020	Índice de marginación normalizado a nivel localidad, 2020
