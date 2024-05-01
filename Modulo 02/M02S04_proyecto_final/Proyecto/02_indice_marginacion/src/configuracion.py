@@ -16,7 +16,9 @@ RUTA_DATOS_PROGRAMA = RUTA_BASE / 'datos_programa'
 # Ruta del archivo de la base de datos
 RUTA_BD = RUTA_DATOS_PROGRAMA / 'bd.sqlite'
 
-
+# Nos aseguramos de que las carpetas principales existan
+RUTA_DATOS.mkdir(parents=True, exist_ok=True)
+RUTA_DATOS_PROGRAMA.mkdir(parents=True, exist_ok=True)
 
 
 
