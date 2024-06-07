@@ -39,5 +39,19 @@
         <span class="bg-primary">------</span>
     </div>
 
+    <!-- Estas propiedades también son responsivas, por lo que podemos
+    hacer que un elemento se esconda a partir de un breakpoint -->
+    <div class="container bg-secondary text-white p-3 mb-4">
+        <span class="bg-danger">------</span>
+        <span class="bg-success d-md-none">none</span>
+        <span class="bg-primary">------</span>
+    </div>
+    <!-- O al revez, es decir, que se muestre a partir de un breakpoint -->
+    <div class="container bg-secondary text-white p-3 mb-4">
+        <span class="bg-danger">------</span>
+        <span class="bg-success d-none d-md-inline">none</span>
+        <span class="bg-primary">------</span>
+    </div>
+
 </body>
 </html>
