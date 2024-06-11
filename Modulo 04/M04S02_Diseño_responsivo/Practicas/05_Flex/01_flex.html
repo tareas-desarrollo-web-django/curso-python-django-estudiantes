@@ -11,21 +11,25 @@
 <body>
     
     <!-- La clase .d-flex convierte un elemento en flexbox y por consecuencia
-    sus hijos directos en elementos flex -->
+    sus hijos directos en elementos flex, notemos como a pesar de contener 
+    elementos div, que son de tipo block, se ajustan a las reglas del felxbox
+    no abarcando todo el espacio -->
     <div class="container bg-secondary text-white p-2 my-3 d-flex">
         <div class="bg-primary m-2 py-2 px-3">Elemento flex 1</div>
         <div class="bg-dark m-2 py-2 px-3">Elemento flex 2</div>
         <div class="bg-success m-2 py-2 px-3">Elemento flex 3</div>
     </div>
 
-    <!-- Podemos orientar el flexbox como fila -->
+    <!-- Podemos orientar el flexbox como fila, en este caso el eje primario
+    será el horizontal -->
     <div class="container bg-secondary text-white p-2 my-3 d-flex flex-row">
         <div class="bg-primary m-2 py-2 px-3">Elemento flex 1</div>
         <div class="bg-dark m-2 py-2 px-3">Elemento flex 2</div>
         <div class="bg-success m-2 py-2 px-3">Elemento flex 3</div>
     </div>
 
-    <!-- Podemos orientar el flexbox como columna -->
+    <!-- Podemos orientar el flexbox como columna, en este caso el eje primario
+    será el vertical -->
     <div class="container bg-secondary text-white p-2 my-3 d-flex flex-column">
         <div class="bg-primary m-2 py-2 px-3">Elemento flex 1</div>
         <div class="bg-dark m-2 py-2 px-3">Elemento flex 2</div>
@@ -64,7 +68,7 @@
     .align-content-{start, end, center, between, around, stretch}.
     Lo ideal es combinarlo con .flex-wrap
     Se puede combinar con .justify-content-{} -->
-    <div style="min-height:200px" class="container bg-secondary text-white p-2 my-3 d-flex flex-wrap align-content-center justify-content-between">
+    <div style="min-height:200px" class="container bg-secondary text-white p-2 my-3 d-flex flex-wrap align-content-start justify-content-between">
         <div class="bg-primary m-2 py-2 px-3">Elemento flex 1</div>
         <div class="bg-dark m-2 py-2 px-3">Elemento flex 2</div>
         <div class="bg-success m-2 py-2 px-3">Elemento flex 3</div>
