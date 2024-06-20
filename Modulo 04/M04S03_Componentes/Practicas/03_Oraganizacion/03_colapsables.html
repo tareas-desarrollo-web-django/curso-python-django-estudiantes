@@ -33,12 +33,15 @@
         </div>
     </div>
 
-    <!-- Acordeon: .accordion -->
+    <!-- 
+    Acordeon: .accordion
+    NOTA: Si queremos que los acordiones no se escondan al abrir otro, solo quitamos `data-bs-parent="#<id>"`
+    -->
     <div class="container my-5 py-3">
         <div class="accordion" id="mi_acordeon">
             <!-- Elemento 1 -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="cabecera_1">
+                <h2 class="accordion-header">
                     <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#colapsable_1">
                     Título del elemento
                     </button>
@@ -51,7 +54,7 @@
             </div>
             <!-- Elemento 2 -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="cabecera_2">
+                <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_2">
                     Título del elemento
                     </button>
@@ -64,7 +67,7 @@
             </div>
             <!-- Elemento 3 -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="cabecera_3">
+                <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_3">
                     Título del elemento
                     </button>
