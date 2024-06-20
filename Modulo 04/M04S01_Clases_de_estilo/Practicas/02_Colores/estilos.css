@@ -1,0 +1,20 @@
+
+.text-lightblue {
+    color: lightblue;
+}
+
+.text-purplealgo {
+    color: hsl(236, 59%, 53%);
+}
+
+.bg-verde {
+    background-color: rgb(135, 162, 135);
+}
+
+.bg-verde-claro {
+    background-color: hsl(120, 13%, 78%);
+}
+
+.bg-verde-oscuro {
+    background-color: hsl(120, 13%, 38%);
+}

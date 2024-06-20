@@ -12,16 +12,79 @@
     <!-- Lista agrupada normal: list-group, list-group-item -->
     <div class="container mt-5">
         <h4>Lista agrupada básica</h4>
-        <ul class="list-group w-50">
-            <li class="list-group-item">Elemento 1</li>
-            <li class="list-group-item">Elemento 2</li>
-            <li class="list-group-item">Elemento 3</li>
-            <li class="list-group-item">Elemento 4</li>
-        </ul>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" onclick="mostrarContenedor(1)">
+                <div class="d-flex justify-content-between flex-wrap mb-2">
+                    <h5>Reunión programada hoy es</h5>
+                    <small>Hace 3 horas</small>
+                </div>
+                <p>Discutir estrategia de ventas de los nuevos productos</p>
+                <small class="badge bg-success">Asistencia confirmada</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" onclick="mostrarContenedor(2)">
+                <div class="d-flex justify-content-between flex-wrap mb-2">
+                    <h5>Reunión programada</h5>
+                    <small>Hace 3 horas</small>
+                </div>
+                <p>Discutir estrategia de ventas de los nuevos productos</p>
+                <small class="badge bg-warning">Confirmar asistencia</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" onclick="mostrarContenedor(3)">
+                <div class="d-flex justify-content-between flex-wrap mb-2">
+                    <h5>Reunión programada</h5>
+                    <small>Hace 3 horas</small>
+                </div>
+                <p>Discutir estrategia de ventas de los nuevos productos</p>
+                <small class="badge bg-danger">Reunión cancelada</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" onclick="mostrarContenedor(4)">
+                <div class="d-flex justify-content-between flex-wrap mb-2">
+                    <h5>Reunión programada</h5>
+                    <small>Hace 3 horas</small>
+                </div>
+                <p>Discutir estrategia de ventas de los nuevos productos</p>
+                <small class="badge bg-success">Asistencia confirmada</small>
+            </a>
+        </div>
     </div>
 
+
+
+
+
+
+    <div class="container" id="contenedores">
+        <div class="bg-info p-4 d-none" id="contenedor-1">
+            Hola soy el contenedor 1
+        </div>
+        <div class="bg-primary p-4 d-none" id="contenedor-2">
+            Hola soy el contenedor 2
+        </div>
+        <div class="bg-success p-4 d-none" id="contenedor-3">
+            Hola soy el contenedor 3
+        </div>
+        <div class="bg-warning p-4 d-none" id="contenedor-4">
+            Hola soy el contenedor 4
+        </div>
+    </div>
+
+    <script>
+        function mostrarContenedor(id) {
+            let contenedores = document.querySelectorAll(`#contenedores > div`)
+            
+            contenedores.forEach((x) => {
+                x.classList.add('d-none')
+            })
+
+            let contenedor = document.querySelector(`#contenedor-${id}`)
+            contenedor.classList.remove('d-none')
+        }
+
+    </script>
+    
+
     <!-- Con elementos activos: .active -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con elementos activos</h4>
         <div class="my-3">
             <ul class="list-group w-50">
@@ -31,10 +94,10 @@
                 <li class="list-group-item">Elemento 4</li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <!-- Usando links: <div>, <a> -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con links</h4>
         <div class="my-3">
             <div class="list-group w-50">
@@ -44,10 +107,10 @@
                 <a href="#" class="list-group-item">Elemento 4</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Con fondo gris al pasar el mouse encima: .list-group-item-action -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con links resaltados</h4>
         <div class="my-3">
             <div class="list-group w-50">
@@ -57,10 +120,10 @@
                 <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Links deshabilitados: .disabled -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con elementos deshabilitados</h4>
         <div class="my-3">
             <div class="list-group w-50">
@@ -70,10 +133,10 @@
                 <a href="#" class="list-group-item list-group-item-action">Elemento 4</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- En horizontal: .list-group-horizontal -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada hotizontal</h4>
         <div class="my-3">
             <ul class="list-group list-group-horizontal">
@@ -83,10 +146,10 @@
                 <li class="list-group-item">Elemento 4</li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <!-- De colores: .list-group-item-{color} -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con colores</h4>
         <div class="my-3">
             <ul class="list-group w-50">
@@ -96,10 +159,10 @@
                 <li class="list-group-item list-group-item-success">Elemento 4</li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <!-- Combinar con badges usando Flexbox -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada con elementos flex</h4>
         <div class="my-3">
             <ul class="list-group w-50">
@@ -117,10 +180,10 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <!-- Ejemplo más elaborado -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <h4>Lista agrupada más elaborada</h4>
         <div class="my-3">
             <div class="list-group w-50">
@@ -150,7 +213,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     
 </body>
 </html>

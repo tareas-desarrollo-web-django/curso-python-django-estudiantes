@@ -13,30 +13,43 @@
     <!-- Podemos crear alertas de distintos colores: .alert .alert-{color} -->
     <div class="container my-5 py-3 border border-dark">
         <h4>Alertas normales</h4>
-        <div class="alert alert-success">
-            Mensaje de alerta
-        </div>
-        <div class="alert alert-warning">
-            Mensaje de alerta
-        </div>
         <div class="alert alert-danger">
-            Mensaje de alerta
+            Hubo un error en el campo <b>email</b>
         </div>
-        <div class="alert alert-primary">
-            Mensaje de alerta
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <div class="dropdown dropend">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    Servicios
+                </button>
+                <ul class="dropdown-menu">
+                    <li><h1 class="dropdown-header">Software</h1></li>
+                    <li><a class="dropdown-item" href="#" onclick="click_menu(1)">Reparación</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="click_menu(2)">Instalación</a></li>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><h1 class="dropdown-header">Hardware</h1></li>
+                    <li><a class="dropdown-item" href="#" onclick="click_menu(3)">Limpieza</a></li>
+                    <li>
+                        <a class="dropdown-item d-flex justify-content-between" href="#">
+                            <span>Mensajes</span>
+                            <span class="bg-danger rounded-pill px-2 text-white">5</span>
+                        </a>
+                    </li>
+                    <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                        <span>Mensajes</span>
+                        <div class="spinner-grow spinner-grow-sm text-danger position-relative">
+                            <span class="text-white position-absolute start-50 top-50 translate-middle">5</span>    
+                        </div>
+                        
+                    </a></li>
+                </ul>
+            </div>
         </div>
-        <div class="alert alert-dark">
-            Mensaje de alerta
-        </div>
-        <div class="alert alert-secondary">
-            Mensaje de alerta
-        </div>
-        
     </div>
 
 
     <!-- Alertas que se puedan cerrar: .alert-dismissible -->
-    <div class="container my-5  py-3 border border-dark">
+    <!-- <div class="container my-5  py-3 border border-dark">
         <h4>Alertas que se pueden cerrar</h4>
         <div class="alert alert-success alert-dismissible">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -51,7 +64,7 @@
             Mensaje de alerta
         </div>
 
-    </div>
+    </div> -->
     
 </body>
 </html>

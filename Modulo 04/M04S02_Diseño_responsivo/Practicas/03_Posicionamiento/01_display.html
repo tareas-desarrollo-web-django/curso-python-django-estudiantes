@@ -9,49 +9,54 @@
 </head>
 <body>
     <!-- Los elementos inline no pueden modificar su ancho ni alto -->
-    <div class="container bg-secondary text-white p-3 my-5">
+    <!-- <div class="container bg-secondary text-white p-3 my-5">
         <span class="bg-danger">------</span>
-        <span class="bg-success d-inline" style="width:100px;">inline</span>
+        <span class="bg-success d-inline-block" style="width: 300px;">inline</span>
         <span class="bg-primary">------</span>
-    </div>
+    </div> -->
 
     <!-- Los elementos block sí pueden modificar su ancho y alto,
     por defecto su ancho es lo máximo posible en el contenedor -->
-    <div class="container bg-secondary text-white p-3 mb-4">
+    <!-- <div class="container bg-secondary text-white p-3 mb-4">
         <span class="bg-danger">------</span>
         <span class="bg-success d-block" style="width:100px;">block</span>
         <span class="bg-primary">------</span>
-    </div>
+    </div> -->
 
     <!-- Para poder modificar las dimensiones de un elemento inline,
     hay que definirlo como inline-block -->
-    <div class="container bg-secondary text-white p-3 mb-4">
+    <!-- <div class="container bg-secondary text-white p-3 mb-4">
         <span class="bg-danger">------</span>
         <span class="bg-success d-inline-block" style="width:150px;">inline-block</span>
         <span class="bg-primary">------</span>
-    </div>
+    </div> -->
 
     <!-- A diferencia de las clases "visible" e "invisible", un elemento
     con display none es removido del flujo de la página -->
     <div class="container bg-secondary text-white p-3 mb-4">
-        <span class="bg-danger">------</span>
-        <span class="bg-success d-none">none</span>
-        <span class="bg-primary">------</span>
+        <span class="bg-primary">Errores &#9660;</span>
+        <div class="bg-danger d-none d-md-block">
+            <ul>
+                <li>Número no válido</li>
+                <li>Dirección incompleta</li>
+            </ul>
+        </div>
+        <div class="bg-info">------</div>
     </div>
 
     <!-- Estas propiedades también son responsivas, por lo que podemos
     hacer que un elemento se esconda a partir de un breakpoint -->
-    <div class="container bg-secondary text-white p-3 mb-4">
+    <!-- <div class="container bg-secondary text-white p-3 mb-4">
         <span class="bg-danger">------</span>
         <span class="bg-success d-md-none">none</span>
         <span class="bg-primary">------</span>
-    </div>
+    </div> -->
     <!-- O al revez, es decir, que se muestre a partir de un breakpoint -->
-    <div class="container bg-secondary text-white p-3 mb-4">
+    <!-- <div class="container bg-secondary text-white p-3 mb-4">
         <span class="bg-danger">------</span>
         <span class="bg-success d-none d-md-inline">none</span>
         <span class="bg-primary">------</span>
-    </div>
+    </div> -->
 
 </body>
 </html>

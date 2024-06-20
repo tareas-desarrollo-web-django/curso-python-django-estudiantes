@@ -14,32 +14,95 @@
     Podemos iniciarlo como expandido: show
     Está contraido por defecto
     -->
-    <div class="container my-5 py-3 border border-dark rounded-2">
-        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mi_colapsable">Mostrar/ocultar</button>
-        <div id="mi_colapsable" class="collapse">
-            <p class="m-3 border border-dark rounded-3 p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
+    <div class="container my-5 py-3  rounded-2">
+        <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#mi_colapsable">
+            Mostrar/ocultar
+        </button>
+        <div id="mi_colapsable" class="collapse show">
+            <p class="border border-dark rounded-3 p-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. 
+                Repudiandae eos ex voluptates quia?
             </p>
         </div>
     </div>
 
+    <div class="container my-5 py-3  rounded-2">
+        <div class="accordion" id="mi-acordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cuerpo_1">
+                        Junta de estrategia
+                    </button>
+                </h2>
+                <div id="cuerpo_1" class="accordion-collapse collapse" data-bs-parent="#mi-acordion">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-between flex-wrap mb-2">
+                            <h5>Reunión programada hoy es</h5>
+                            <small>Hace 3 horas</small>
+                        </div>
+                        <p>Discutir estrategia de ventas de los nuevos productos</p>
+                        <small class="badge bg-success">Asistencia confirmada</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cuerpo_2">
+                        Juntas por confirmar
+                    </button>
+                </h2>
+                <div id="cuerpo_2" class="accordion-collapse collapse" data-bs-parent="#mi-acordion">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-between flex-wrap mb-2">
+                            <h5>Reunión programada</h5>
+                            <small>Hace 3 horas</small>
+                        </div>
+                        <p>Discutir estrategia de ventas de los nuevos productos</p>
+                        <small class="badge bg-warning">Confirmar asistencia</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cuerpo_3">
+                        Juntas canceladas
+                    </button>
+                </h2>
+                <div id="cuerpo_3" class="accordion-collapse collapse" data-bs-parent="#mi-acordion">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-between flex-wrap mb-2">
+                            <h5>Reunión programada</h5>
+                            <small>Hace 3 horas</small>
+                        </div>
+                        <p>Discutir estrategia de ventas de los nuevos productos</p>
+                        <small class="badge bg-danger">Reunión cancelada</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- Podemos iniciarlo como expandido: show -->
-    <div class="container my-5 py-3">
+    <!-- <div class="container my-5 py-3">
         <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#mi_colapsable_2">Mostrar/ocultar</button>
         <div id="mi_colapsable_2" class="collapse show">
             <p class="border border-info bg-info bg-opacity-25 rounded-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quod neque deleniti repellat officia. Repudiandae eos ex voluptates quia?
             </p>
         </div>
-    </div>
+    </div> -->
 
     <!-- 
     Acordeon: .accordion
     NOTA: Si queremos que los acordiones no se escondan al abrir otro, solo quitamos `data-bs-parent="#<id>"`
     -->
-    <div class="container my-5 py-3">
+    <!-- <div class="container my-5 py-3">
         <div class="accordion" id="mi_acordeon">
-            <!-- Elemento 1 -->
+            
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#colapsable_1">
@@ -52,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Elemento 2 -->
+            
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_2">
@@ -65,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Elemento 3 -->
+            
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#colapsable_3">
@@ -79,7 +142,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 </html>
