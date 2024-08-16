@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.views.generic import CreateView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.urls import reverse_lazy
+from django.contrib.auth import logout
 # from django.contrib.auth.forms import UserCreationForm
 from .forms import FormularioCrearUsuario
+
 
 
 class Registro(CreateView):
@@ -24,5 +26,12 @@ class CerrarSesion(LogoutView):
 
 class CambiarPassword(PasswordChangeView):
     template_name = 'usuarios/cambiar_password.html'
-    success_url = reverse_lazy('usuarios:cerrar_sesion')
+    success_url = reverse_lazy('usuarios:iniciar_sesion')
+
+    def form_valid(self, form):
+        logout(self.request)
+        return super().form_valid(form)
+
+
+
 
