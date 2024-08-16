@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+
+{% block contenido %}
+<div class="container align-center py-5">
+    <div class="shadow">
+        <h1 class="display-4 bg-dark text-white py-4 px-3 rounded-top border border-dark my-0">Regístrate</h1>
+        <div class="rounded-bottom border border-dark  bg-light">
+
+            <form class="needs-validation p-4" method="post" novalidate>
+                {% csrf_token %}
+                <div class="input-group my-2 pt-4">
+                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Nombre" name="first_name" {% if form.first_name.value %}value="{{form.first_name.value}}"{% endif %} required>
+                    <div class="invalid-feedback d-block">{{form.first_name.errors}}</div>
+                </div>
+                <div class="input-group my-2">
+                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Usuario" name="username" {% if form.username.value %}value="{{form.username.value}}"{% endif %} required>
+                    <div class="invalid-feedback d-block">{{form.username.errors}}</div>
+                </div>
+                <div class="input-group my-2">
+                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                    <input type="text" class="form-control" placeholder="Contraseña" name="password1" {% if form.password1.value %}value="{{form.password1.value}}"{% endif %} required>
+                    <div class="invalid-feedback d-block">{{form.password1.errors}}</div>
+                </div>
+                <div class="input-group my-2">
+                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                    <input type="text" class="form-control" placeholder="Repetir contraseña" name="password2" {% if form.password2.value %}value="{{form.password2.value}}"{% endif %} required>
+                    <div class="invalid-feedback d-block">{{form.password2.errors}}</div>
+                </div>
+                {% for error in form.non_field_errors %}
+                <div class="invalid-feedback d-block">{{error}}</div>
+                {% endfor %}
+
+
+                <div class="d-flex mt-1 flex-wrap justify-content-between text-secondary align-items-baseline">
+                    <button type="submit" class="btn btn-outline-dark mt-3">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+

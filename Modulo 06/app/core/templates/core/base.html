@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <title>Actividades</title>
+</head>
+<body>
+    
+    <!-- Cabecera -->
+    <div class="container-fluid text-light p-5" id="cabecera">
+        <div class="row">
+            <div class="col-12 col-md-6 text-center">
+                <span><i class="fa-regular fa-lightbulb" style="font-size: 150px;"></i></span>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+                <h1 class="display-1">Seguimiento</h1>
+                <p class="display-6">de actividades</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid px-0 sticky-top shadow">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-2">
+            <div class="container-fluid">
+                <!-- Logo o marca -->
+                <a class="navbar-brand" href="#">
+                    <span><i class="fa-solid fa-book"></i></span>
+                </a>
+                
+                <!-- Botón para mostrar y ocultar el menú (solo visible cuando está colapsado)
+                El target tiene que concidir con el ID del contenido del navbar -->
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#contenido_navbar" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="contenido_navbar">
+                    <ul class="navbar-nav me-auto mb-0 pt-3 pt-sm-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Nueva actividad</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-0 pt-3 pt-sm-0">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'usuarios:cerrar_sesion' %}">
+                                Cerrar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'usuarios:cambiar_password' %}">
+                                Cambiar contraseña
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'usuarios:iniciar_sesion' %}">
+                                Iniciar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'usuarios:registro' %}">
+                                Registrarse
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+    {% block contenido %}{% endblock %}
+     
+</body>
+</html>
