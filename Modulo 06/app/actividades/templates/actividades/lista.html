@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+<div class="container my-5">
+    <h1 class="display-6">Lista de actividades</h1>
+</div>
+
+
+<div class="container my-5 d-flex flex-column justify-content-end gap-3">
+    {% for actividad in actividades %}
+    <div class="p-3 border rounded-3 shadow-sm">
+        <div class="position-relative">
+            <a href="{% url 'actividades:detalle' actividad.id %}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{actividad.titulo}}</h5>
+                    <small>{{actividad.time_since}}</small>
+                </div>
+                <p class="mb-1">{{actividad.descripcion|slice:100}}...</p>
+                <small class="badge bg-info">{{actividad.importancia}}</small>
+                <small class="badge bg-primary">{{actividad.estado}}</small>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- Paginacion básica -->
+<ul class="pagination pagination-lg justify-content-center my-5">
+    <li class="page-item">
+        {% if page_obj.has_previous %}
+        <a class="page-link" href="?{{get_params}}&page={{page_obj.previous_page_number}}">Anterior</a>
+        {% else %}
+        <a class="page-link disabled" href="">Anterior</a>
+        {% endif %}
+    </li>
+
+    <li class="page-item">
+        <a class="page-link disabled bg-light">{{page_obj.number}} de {{page_obj.paginator.num_pages}}</a>
+    </li>
+
+    <li class="page-item">
+        {% if page_obj.has_next %}
+        <a class="page-link" href="?{{get_params}}&page={{page_obj.next_page_number}}">Siguiente</a>
+        {% else %}
+        <a class="page-link disabled" href="">Siguiente</a>
+        {% endif %}
+    </li>
+</ul>
+
+{% endblock %}

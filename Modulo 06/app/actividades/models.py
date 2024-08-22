@@ -19,8 +19,8 @@ class Estado(models.Model):
 class Actividad(models.Model):
     titulo = models.CharField(max_length=32, null=False, verbose_name='título')
     descripcion = models.TextField(verbose_name='descripción', null=True, blank=True)
-    fecha_inicio = models.DateTimeField(verbose_name='fecha de inicio')
-    fecha_limite = models.DateTimeField(verbose_name='fecha límite')
+    fecha_inicio = models.DateField(verbose_name='fecha de inicio')
+    fecha_limite = models.DateField(verbose_name='fecha límite')
     importancia = models.ForeignKey(Importancia, on_delete=models.CASCADE, verbose_name='importancia')
     estado = models.ForeignKey(Estado, on_delete=models.CASCADE, verbose_name='estado')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='usuario')

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView, TemplateView, View, ListView
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -36,8 +36,8 @@ class Nueva(LoginRequiredMixin, CreateView):
     def post(self, request, *args, **kwargs):
         resp = super().post(request, *args, **kwargs)
 
-        if self.object is not None:
-            self.enviar_email(self.object, request)
+        # if self.object is not None:
+        #     self.enviar_email(self.object, request)
 
         return resp
 
@@ -89,8 +89,48 @@ class EmailAux(TemplateView):
         return context
     
 
+class Lista(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/lista.html'
+    # model = models.Actividad
+    context_object_name = 'actividades'
+    paginate_by = 2
+    # page_kwarg = 'pagina'
+
+    def get_queryset(self):
+        importancia_pk = self.request.GET.get('ipk', None)
+        estado_pk = self.request.GET.get('epk', None)
+
+        # Si algún ID no es numérico lo hacemos None
+        if importancia_pk and not importancia_pk.isdigit():
+            importancia_pk = None
+        if estado_pk and not estado_pk.isdigit():
+            estado_pk = None
+
+        objectos = models.Actividad.objects.filter(usuario=self.request.user)
+
+        # Si hay algun filtro en los parámetros get 'ipk' (importancia pk) y 'epk' (estado pk), lo aplicamos
+        if importancia_pk:
+            objectos = objectos.filter(importancia=importancia_pk)
+        if estado_pk:
+            objectos = objectos.filter(estado=estado_pk)
+
+        return objectos
+    
 
 
+class Generador(View):
+    ...
 
 
+class Detalle(View):
+    ...
+
+
+class Editar(View):
+    ...
+
+
+class Eliminar(View):
+    ...
 
