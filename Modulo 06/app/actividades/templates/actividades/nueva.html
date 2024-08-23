@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load actividades_filters %}
 
 {% block contenido %}
 
@@ -26,7 +27,7 @@
                 </div>
     
                 <div class="form-floating my-3">
-                    <input type="date" class="form-control" id="et_fecha_ini" placeholder="x" name="fecha_inicio" {% if form.fecha_inicio.value %}value="{{form.fecha_inicio.value}}"{% endif %}>
+                    <input type="date" class="form-control" id="et_fecha_ini" placeholder="x" name="fecha_inicio" {% if form.fecha_inicio.value %}value="{{form.fecha_inicio.value|isoformat}}"{% endif %}>
                     <label for="et_fecha_ini">Fecha de inicio</label>
                     {% for error in form.fecha_inicio.errors %}
                     <div class="invalid-feedback d-block">{{error}}</div>
@@ -34,7 +35,7 @@
                 </div>
     
                 <div class="form-floating my-3">
-                    <input type="date" class="form-control" id="et_fecha_lim" placeholder="x" name="fecha_limite" {% if form.fecha_limite.value %}value="{{form.fecha_limite.value}}"{% endif %}>
+                    <input type="date" class="form-control" id="et_fecha_lim" placeholder="x" name="fecha_limite" {% if form.fecha_limite.value %}value="{{form.fecha_limite.value|isoformat}}"{% endif %}>
                     <label for="et_fecha_lim">Fecha límite</label>
                     {% for error in form.fecha_limite.errors %}
                     <div class="invalid-feedback d-block">{{error}}</div>

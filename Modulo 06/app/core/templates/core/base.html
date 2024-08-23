@@ -16,6 +16,7 @@
     {% url 'usuarios:registro' as url_registro %}
     {% url 'usuarios:iniciar_sesion' as url_iniciar_sesion %}
     {% url 'usuarios:cambiar_password' as url_cambiar_password %}
+    {% url 'actividades:lista' as url_actividades_lista %}
     
     <!-- Cabecera -->
     <div class="container-fluid text-light p-5" id="cabecera">
@@ -47,6 +48,9 @@
                 <div class="collapse navbar-collapse" id="contenido_navbar">
                     <ul class="navbar-nav me-auto mb-0 pt-3 pt-sm-0">
                         {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_actividades_lista %}active{% endif %}" href="{% url 'actividades:lista' %}">Actividades</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == url_actividades_nueva %}active{% endif %}" href="{% url 'actividades:nueva' %}">Nueva actividad</a>
                         </li>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, TemplateView, View, ListView
+from django.views.generic import CreateView, TemplateView, View, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -24,7 +24,7 @@ class Nueva(LoginRequiredMixin, CreateView):
     template_name = 'actividades/nueva.html'
     model = models.Actividad
     fields = ['titulo', 'descripcion', 'fecha_inicio', 'fecha_limite', 'importancia', 'estado']
-    success_url = reverse_lazy('core:home')
+    success_url = reverse_lazy('actividades:lista')
 
     def get_context_data(self, *args, **kwargs):
         contexto = super().get_context_data(*args, **kwargs)
@@ -134,7 +134,6 @@ class Lista(LoginRequiredMixin, ListView):
 
         return context
     
-    
 
 class Generador(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('usuarios:iniciar_sesion')
@@ -168,14 +167,47 @@ class Generador(LoginRequiredMixin, TemplateView):
         return redirect('actividades:lista')
 
 
-class Detalle(View):
-    ...
+class Detalle(LoginRequiredMixin, DetailView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/detalle.html'
+    # model = models.Actividad
+    # NOTE: Para indicarle a la vista cual es el nombre del parámetro que contiene el ID en la URL
+    # por defecto busca el parámetro 'pk'
+    # pk_url_kwarg = 'id'
+
+    def get_queryset(self):
+        return models.Actividad.objects.filter(usuario=self.request.user)
+    
+
+class Editar(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/nueva.html'
+    # model = models.Actividad
+    fields = ['titulo', 'descripcion', 'fecha_inicio', 'fecha_limite', 'importancia', 'estado']
+    # success_url = reverse_lazy('actividades:lista')
+
+    def get_success_url(self):
+        return reverse('actividades:detalle', args=(self.kwargs['pk'],))
+
+    def get_queryset(self):
+        return models.Actividad.objects.filter(usuario=self.request.user)
+
+    def get_context_data(self, *args, **kwargs):
+        contexto = super().get_context_data(*args, **kwargs)
+
+        contexto['importancias'] = models.Importancia.objects.all()
+        contexto['estados'] = models.Estado.objects.all()
+
+        return contexto
 
 
-class Editar(View):
-    ...
+class Eliminar(LoginRequiredMixin, DeleteView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/detalle.html'
+    success_url = reverse_lazy('actividades:lista')
+    extra_context = {'confirmar_eliminar':True}
+    # model = models.Actividad
 
-
-class Eliminar(View):
-    ...
+    def get_queryset(self):
+        return models.Actividad.objects.filter(usuario=self.request.user)
 

@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+<div class="container my-5">
+    <h1 class="display-6">Detalle de actividad</h1>
+</div>
+
+<div class="container">
+    <p class="lead"><strong>Título:</strong> {{actividad.titulo}}</p>
+    <p class="lead"><strong>Descripción:</strong> {{actividad.descripcion}}</p>
+    <p class="lead"><strong>Periodo de la actividad:</strong> del {{actividad.fecha_inicio|date:'d/m/Y'}} al {{actividad.fecha_limite|date:'d/m/Y'}} </p>
+    <p class="lead"><strong>Importancia:</strong> {{actividad.importancia}}</p>
+    <p class="lead"><strong>Estado:</strong> {{actividad.estado}}</p>
+    <p class="lead"><strong>Fecha de registro de la actividad:</strong> {{actividad.fecha_creacion}}</p>
+    <p class="lead"><strong>Fecha de última actualización:</strong> {{actividad.fecha_actualizacion}}</p>
+</div>
+
+<div class="container d-flex flex-wrap gap-3 py-5 justify-content-between">
+    <div>
+        <a class="btn btn-primary" href="{% url 'actividades:editar' actividad.id %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'actividades:eliminar' actividad.id %}">Eliminar</a>
+    </div>
+</div>
+
+<!-- 
+Esta variable booleana es enviada solo por la vista de DeleteView, lo cual permite mostrar el formulario de
+confirmación de eliminar solo si la plantilla es servida por dicha vista.
+-->
+{% if confirmar_eliminar %}
+<div class="container d-flex flex-wrap gap-3 pb-5 justify-content-between">
+    <form method="POST">
+        {% csrf_token %}
+        <p class="lead d-inline">¿Seguro que deseas eliminar?</p>
+        <button type="submit" class="btn btn-danger px-4 mx-4">Si</button>
+        <a class="btn btn-success px-4" href="{% url 'actividades:detalle' actividad.id %}">No</a>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}
