@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+
+<div class="container align-center py-5">
+    <div class="shadow">
+        <h1 class="display-4 bg-dark text-white py-4 px-3 rounded-top border border-dark my-0">Generar actividades</h1>
+        <div class="rounded-bottom border border-dark  bg-light">
+
+            <form class="needs-validation p-4" method="post" novalidate>
+                {% csrf_token %}
+                <div class="form-floating my-3">
+                    <input type="text" class="form-control" id="et_titulo" placeholder="x" name="cantidad">
+                    <label for="et_titulo">Cantidad</label>
+                </div>
+    
+                <div class="d-flex mt-1 flex-wrap justify-content-between text-secondary align-items-baseline">
+                    <button type="submit" class="btn btn-outline-dark mt-3">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

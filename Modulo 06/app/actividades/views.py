@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import CreateView, TemplateView, View, ListView
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,6 +10,12 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from pathlib import Path
 from email.mime.image import MIMEImage
+
+import datetime
+import lorem
+import random
+
+from urllib.parse import urlencode
 
 from . import models
 
@@ -94,7 +100,7 @@ class Lista(LoginRequiredMixin, ListView):
     template_name = 'actividades/lista.html'
     # model = models.Actividad
     context_object_name = 'actividades'
-    paginate_by = 2
+    paginate_by = 3
     # page_kwarg = 'pagina'
 
     def get_queryset(self):
@@ -117,10 +123,49 @@ class Lista(LoginRequiredMixin, ListView):
 
         return objectos
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
+        get_params = self.request.GET.dict()
+        if self.page_kwarg in get_params:
+            del get_params[self.page_kwarg]
 
-class Generador(View):
-    ...
+        context["get_params"] = urlencode(get_params)
+
+        return context
+    
+    
+
+class Generador(LoginRequiredMixin, TemplateView):
+    login_url = reverse_lazy('usuarios:iniciar_sesion')
+    template_name = 'actividades/generador.html'
+
+    def post(self, request):
+        # Número de actividades indicadas en el formulario
+        cantidad = int(request.POST.get('cantidad', 0))
+        # Fecha mínima de inicio de las actividades
+        fecha_base = datetime.date(year=2024, month=1, day=1)
+        # Lista de etiquetas existentes
+        et_importancia = models.Importancia.objects.all()
+        et_estado = models.Estado.objects.all()
+
+        for _ in range(cantidad):
+            actividad = models.Actividad()
+            actividad.titulo = lorem.sentence()[0:32]
+            actividad.descripcion = lorem.paragraph()
+            # Fecha de inicio aleatorio entre 0 y 100 días después de la fecha base
+            actividad.fecha_inicio = fecha_base + datetime.timedelta(days=random.randint(0, 100))
+            # Fecha límite aleatorio entre 30 y 90 días después de la fecha de inicio
+            actividad.fecha_limite = actividad.fecha_inicio + datetime.timedelta(days=random.randint(30, 90))
+            # Asignamos la actividad al usario autenticado
+            actividad.usuario = request.user
+            # Importancia y estado aleatorio
+            actividad.importancia = et_importancia[random.randint(0, len(et_importancia) - 1)]
+            actividad.estado = et_estado[random.randint(0, len(et_estado) - 1)]
+            
+            actividad.save()
+        
+        return redirect('actividades:lista')
 
 
 class Detalle(View):

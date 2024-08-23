@@ -16,8 +16,8 @@
                     <small>{{actividad.time_since}}</small>
                 </div>
                 <p class="mb-1">{{actividad.descripcion|slice:100}}...</p>
-                <small class="badge bg-info">{{actividad.importancia}}</small>
-                <small class="badge bg-primary">{{actividad.estado}}</small>
+                <a href="?ipk={{actividad.importancia.id}}"><small class="badge bg-info">{{actividad.importancia}}</small></a>
+                <a href="?epk={{actividad.estado.id}}"><small class="badge bg-primary">{{actividad.estado}}</small></a>
             </a>
         </div>
     </div>
@@ -47,5 +47,81 @@
         {% endif %}
     </li>
 </ul>
+
+
+{% comment %} <!-- Paginacion avanzada -->
+<div class="container my-5">
+    <ul class="pagination pagination-lg justify-content-center my-5">
+        <li class="page-item {% if not page_obj.has_previous %}active{% endif %}">
+            <a class="page-link" href="?{{get_params}}&page=1">1</a>
+        </li>
+
+        {% if page_obj.paginator.num_pages >= 6 and page_obj.number >= 4 %}
+        <li class="page-item disabled">
+            <a class="page-link px-1" href="">{{page_obj.paginator.ELLIPSIS}}</a>
+        </li>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages >= 3 %}
+        <li class="page-item">
+            {% if page_obj.number <= 3 or page_obj.paginator.num_pages < 5 %}
+                <a class="page-link {% if page_obj.number == 2 %}active{% endif %}" href="?{{get_params}}&page=2">2</a>
+            {% elif page_obj.number >= page_obj.paginator.num_pages|add:-2 %}
+                {% with pag_num=page_obj.paginator.num_pages|add:-3 %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% else %}
+                {% with pag_num=page_obj.previous_page_number %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% endif %}
+        </li>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages >= 4 %}
+        <li class="page-item">
+            {% if page_obj.number <= 3 or page_obj.paginator.num_pages < 5 %}
+                <a class="page-link {% if page_obj.number == 3 %}active{% endif %}" href="?{{get_params}}&page=3">3</a>
+            {% elif page_obj.number >= page_obj.paginator.num_pages|add:-2 %}
+                {% with pag_num=page_obj.paginator.num_pages|add:-2 %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% else %}
+                {% with pag_num=page_obj.number %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% endif %}
+        </li>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages >= 5 %}
+        <li class="page-item">
+            {% if page_obj.number <= 3 %}
+                <a class="page-link {% if page_obj.number == 4 %}active{% endif %}" href="?{{get_params}}&page=4">4</a>
+            {% elif page_obj.number <= page_obj.paginator.num_pages|add:-2 %}
+                {% with pag_num=page_obj.next_page_number %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% else %}
+                {% with pag_num=page_obj.paginator.num_pages|add:-1 %}
+                <a class="page-link {% if page_obj.number == pag_num %}active{% endif %}" href="?{{get_params}}&page={{pag_num}}">{{pag_num}}</a>
+                {% endwith %}
+            {% endif %}
+        </li>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages >= 6 and page_obj.number <= page_obj.paginator.num_pages|add:-3 %}
+        <li class="page-item disabled">
+            <a class="page-link px-1" href="">{{page_obj.paginator.ELLIPSIS}}</a>
+        </li>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages >= 2 %}
+        <li class="page-item {% if not page_obj.has_next %}active{% endif %}">
+            <a class="page-link" href="?{{get_params}}&page={{page_obj.paginator.num_pages}}">{{page_obj.paginator.num_pages}}</a>
+        </li>
+        {% endif %}
+    </ul>
+</div> {% endcomment %}
 
 {% endblock %}
